@@ -138,8 +138,9 @@
     <div class="form-group">
         <select class="forn-control group-member-search_events group-member-search_item " name="events">
             <option value="">select event </option>
-            <option value="" >Local Meeting - 2017-01-01</option>
-            <option value="" >Local Meeting - 2017-01-07</option>
+            {{#each group.events}}
+            <option value="{{id}}">{{name}}: {{date}}</option>
+            {{/each}}
         </select>
     </div>
 
@@ -225,7 +226,17 @@
                 <div class="group_members-bulk_tags">
                     <form class="form-inline">
                         <div class="form-group ">
-                            <input type="text" class="form-control" id="" value="" placeholder="add tags.." data-role="tagsinput"> <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i> Save Tags</button>
+                            <select class="form-control">
+                                <option value="">Select Tag</option>
+                                {{#each tags}}
+                                <option value="{{id}}">{{name}}</option>
+                                {{/each}}
+                            </select>
+
+                        </div>
+                        or 
+                        <div class="form-group ">
+                            <input type="text" class="form-control" id="" value="" placeholder="create new tag.." data-role="tagsinput"> <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i> Save</button>
                         </div>
                     </form>
                 </div>
@@ -243,13 +254,19 @@
                         <div class="form-group  ">
                             <select class="form-control">
                                 <option value="">Select Event</option>
-    
+                                {{#each group.events}}
+                                <option value="{{id}}">{{name}}: {{date}}</option>
+                                {{/each}}
                             </select> 
                         </div>
                         <div class="form-group  ">
                             <select class="form-control">
                                 <option value="">Set Status</option>
-    
+                                <option value="">RSVP</option>
+                                <option value="">Invited</option>
+                                <option value="">Declined</option>
+                                <option value="">Attended</option>
+                                <option value="">Did Not Attend</option>    
                             </select> 
                         </div>
                         <button class="btn btn-sm btn-primary"><i class="fa fa-save"></i> Save</button>
@@ -278,7 +295,7 @@
         <table class="table table-striped" id="group-member-list">
             <thead>
                 <tr>
-                    <th></th>
+                    <th><input type="checkbox" data-toggle="tooltip" title="Select All"></th>
                     <th></th>
                     <th>Name</th>
                     <th>Phone</th>

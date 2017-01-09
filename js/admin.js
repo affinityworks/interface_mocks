@@ -11,6 +11,9 @@ $(document).ready(function(){
     var template = Handlebars.compile($("#groups-template").html());
     $("#content").append(template(data));
 
+    $('[data-toggle="tooltip"]').tooltip(); 
+
+
 
 /*   MEMBERS */
 
