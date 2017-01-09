@@ -34,11 +34,8 @@ $(document).ready(function(){
 
 });
 
-
-
      function initMap() {
-        var myLatLng = {lat: 37.8044, lng: -122.2708};
-
+        var myLatLng = {lat: data.group.events[0].location.latitude, lng: data.group.events[0].location.longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: myLatLng
@@ -66,8 +63,9 @@ $(document).ready(function(){
 <h2> <img src="img/logo.png" height="50"> Advocacy Commons </h2> 
 <hr>
 <div id="content"></div>
-    <div id="map"></div>
-
+    <div class="col-md-6">
+        <div id="map"></div>
+    </div>
 
 <script id="groups-event-template" type="text/x-handlebars-template">
 <h1>{{group.name}}</h1>
@@ -85,8 +83,7 @@ $(document).ready(function(){
 {{location.address}}<br>
 {{location.city}} {{location.state}}<br>
 {{location.directions}}<br>
-{{location.latitude}}<br>
-{{location.longitude}}<br>
+<br><br>
 
 
 

@@ -217,8 +217,8 @@ var data={
                     state:"CA",
                     postal_code:"94610",
                     country:"US",
-                    latitude:"",
-                    longitude:"",
+                    latitude:37.8044,
+                    longitude:-122.2708,
                     venue:"Meeting Room B, Union Hall",
                     directions:"Buzz Union Local 12344 at the front door to be let in"
                 },
