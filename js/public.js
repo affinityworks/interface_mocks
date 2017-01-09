@@ -2,8 +2,6 @@ $(document).ready(function(){
 
     Swag.registerHelpers(window.Handlebars);
 
-    var template = Handlebars.compile($("#groups-page-template").html());
-    $("#content").append(template(data.group));
 
     $(".group_signup_form-phone-container").hide();
     $(".group_signup_form-name-container").hide();

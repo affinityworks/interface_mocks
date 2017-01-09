@@ -19,7 +19,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet"> 
 <script>
+$(document).ready(function(){   
 
+    var template = Handlebars.compile($("#groups-page-template").html());
+    $("#content").append(template(data.group));
+
+});
     
     (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -84,7 +89,10 @@
                     <input type="email" class="form-control" id="group_signup_form-email" value="" placeholder="Email">
                 </div>
                 <div class="form-group group_signup_form-name-container">
-                    <input type="text" class="form-control" id="group_signup_form-name" value="" placeholder="Name">
+                    <input type="text" class="form-control" id="group_signup_form-name" value="" placeholder="First Name">
+                </div>
+                <div class="form-group group_signup_form-name-container">
+                    <input type="text" class="form-control" id="group_signup_form-name" value="" placeholder="Last Name">
                 </div>
                 <div class="form-group group_signup_form-phone-container">
                     <input type="phone" class="form-control" id="group_signup_form-phone" value="" placeholder="Phone">
