@@ -192,13 +192,13 @@ var data={
             {
                 name:"San Francisco Actions",
                 group_id:"12",
-                url:"/en/groups/san_francsico",
+                url:"groups/san_francsico",
                 distance:"14"
             },
             {
-                name:"San Jose Action Grouyp",
+                name:"San Jose Action Group",
                 group_id:"12",
-                url:"/en/groups/san_jose",
+                url:"groups/san_jose",
                 distance:"37"
             }
         ],

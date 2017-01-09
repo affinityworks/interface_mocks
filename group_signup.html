@@ -2,24 +2,48 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
      
+    
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>    
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     
+    <script type="text/javascript" src="vendor/swag/lib/swag.js"></script> 
+
+
+    <script type="text/javascript" src="js/data.js"></script> 
+
+
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-<style>
- 
+    <link href="css/user.css" rel="stylesheet"> 
     
-</style>
+    
+<script>
+
+
+$(document).ready(function(){   
+        
+    var template = Handlebars.compile($("#groups-signup-template").html());
+    $("#content").append(template(data));
+
+});
+
+
+</script>        
+    
+<script type="text/javascript" src="js/public.js"></script> 
+
 </head>
 <body>
 <div class="container"> 
 <h2> <img src="img/logo.png" height="50"> Advocacy Commons </h2> 
 <hr>
-<br>   
+<div id="content"></div>
+
+
+
+<script id="groups-signup-template" type="text/x-handlebars-template">
     
 <div class="group_page">
     <h2>Sign Up to be an group leader</h2>
@@ -61,17 +85,17 @@
 
             <div class="form-group col-md-8">
                 <label for="">City</label>
-                <input type="text" class="form-control" id="" placeholder="">
+                <input type="text" class="form-control" id="" value="Oakland, CA">
             </div>
-            <div class="form-group col-md-6">
-                <label for="">Country</label>
-                <input type="text" class="form-control" id="" placeholder="">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="">Postal Code</label>
-                <input type="text" class="form-control" id="" placeholder="">
-            </div>    
-            <div class="form-group col-md-6">
+
+   
+            <div class="form-group col-md-10">
+                <h4>Nearby Groups</h4>
+                <small>Check out the groups near you and see if you might want to join one before starting a new group</small><br>
+                {{#each group.nearby_groups}}
+                    <a href="{{url}}" target="_blank">{{name}}</a>, <small>{{distance}} miles away</small><br>
+                {{/each}}
+                <br>
                 <label for="">Suggested group range</label>
                 <select class="form-control">
                     <option>5 miles</option>
@@ -95,6 +119,8 @@
 
 
 </div>
+   
+</script>
     
 </div>    
     
