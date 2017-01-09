@@ -20,10 +20,10 @@ var data={
             "37.83148014503287, -122.08419799804688",
             "37.95286091815649, -122.23251342773438"
         ],
-        "contact_name":"David Taylor",
+        "contact_name":"Jane Doe",
         "contact_phone":"510-435-8920",
-        "contact_emails":"david@riseup.net",
-        "facebook_page_url":"http://facebook.com/Avaaz",
+        "contact_emails":"name@gmail.com",
+        "facebook_page_url":"http://facebook.com/GroupName",
         "stats":{
             "member_count":10,
             "recent_count":3,
@@ -32,8 +32,8 @@ var data={
         "leaders":[
             {
                 "user_id":"",
-                "name":"David Taylor",
-                "facebook_id":"511719841"
+                "name":"Jane Doe",
+                "facebook_id":"61731840657"
             },
             {
                 "user_id":"",
@@ -45,12 +45,12 @@ var data={
             {
                 user_id:12345,
                 avatar:"",
-                first_name:"David",
-                last_name:"Taylor",
+                first_name:"Jane",
+                last_name:"Doe",
                 phone:"555-555-5555",
                 email:"name@gmail.com",
-                facebook_user_id:511719841,
-                twitter_name:"dtaylor",
+                facebook_user_id:61731840657,
+                twitter_name:"dDoe",
                 activist_score:"4",
                 date_created:"2017-01-08",
                 date_updated:"2017-01-08",
@@ -63,7 +63,7 @@ var data={
                     }  ,              
                     {
                         tag_id:"43",
-                        tag:"Eats Kittens"
+                        tag:"Phone Bank"
                     }  
                 ],
                 stats:{
@@ -74,7 +74,7 @@ var data={
                 notes:[
                     {
                         id:"23434",
-                        note:"David tends to smell nice when he comes to meetings",
+                        note:"Is a lawyer and can help with legal observing",
                         date:"2017-01-02",
                         logged_by_user:{
                             id:1,
@@ -105,11 +105,11 @@ var data={
             {
                 user_id:12345344,
                 avatar:"",
-                first_name:"Wombat",
-                last_name:"Hearder",
+                first_name:"Edward",
+                last_name:"Activst",
                 phone:"555-555-5555",
-                email:"wombat@gmail.com",
-                facebook_user_id:507088373,
+                email:"email@gmail.com",
+                facebook_user_id:124955570892789,
                 twitter_name:"",
                 activist_score:"2",
                 date_created:"2017-01-08",
@@ -205,7 +205,7 @@ var data={
                                 id:1233,
                                 first_name:"Bob",
                                 last_name:"Fishhead",
-                                facebook_user_id:"511719841",
+                                facebook_user_id:"61731840657",
                                 phone:"333-333-3333",
                                 date:"2017-01-01"
                             } ,
@@ -213,7 +213,7 @@ var data={
                                 id:123433,
                                 first_name:"Sam",
                                 last_name:"Fishhead",
-                                facebook_user_id:"511719841",
+                                facebook_user_id:"61731840657",
                                 phone:"333-333-3333",
                                 date:"2017-01-01"
                             } 
@@ -222,16 +222,16 @@ var data={
                         rsvp:[
                             {
                                 id:1233,
-                                first_name:"David",
-                                last_name:"Taylor",
+                                first_name:"Jane",
+                                last_name:"Doe",
                                 facebook_user_id:"",
                                 phone:"555-555-5555",
                                 date:"2017-01-01"
                             },
                             {
                                 id:1233,
-                                first_name:"Wombat",
-                                last_name:"Hearder",
+                                first_name:"Edward",
+                                last_name:"Activst",
                                 facebook_user_id:"",
                                 phone:"111-111-1111",
                                 date:"2017-01-01"
@@ -268,7 +268,7 @@ var data={
     ],
     "admin_user":{
         "user_id":"",
-        "name":"David Taylor",
-        "facebook_id":"511719841"        
+        "name":"Jane Doe",
+        "facebook_id":"61731840657"        
     }
 }
