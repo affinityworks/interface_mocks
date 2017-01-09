@@ -135,7 +135,7 @@
         <select class="forn-control group-member-search_events group-member-search_item " name="events">
             <option value="">select event </option>
             {{#each group.events}}
-            <option value="{{id}}">{{name}}: {{date}}</option>
+            <option value="{{id}}">{{name}}: {{formatDate date "%m/%d/%Y"}}</option>
             {{/each}}
         </select>
     </div>
@@ -251,7 +251,7 @@
                             <select class="form-control">
                                 <option value="">Select Event</option>
                                 {{#each group.events}}
-                                <option value="{{id}}">{{name}}: {{date}}</option>
+                                <option value="{{id}}">{{name}}: {{formatDate date "%m/%d/%Y"}}</option>
                                 {{/each}}
                             </select> 
                         </div>
@@ -321,7 +321,7 @@
                     <td>{{phone}}</td>
                     <td><small>{{email}}<small></td>
 
-                    <td class="group_members-active_row"><small>{{stats.date_last_active}}</small></td>
+                    <td class="group_members-active_row"><small>{{formatDate stats.date_last_active "%m/%d/%Y"}}</small></td>
 
                      <td class="group_members-tags_row">
                         <small>{{#each tags}}{{tag}}, {{/each}}</small>
@@ -473,7 +473,7 @@
                 {{#each notes}}
                 <tr>
                     <td>{{note}}</td>
-                    <td>{{date}}</td>
+                    <td>{{formatDate date "%m/%d/%Y"}}</td>
                     <td>{{logged_by_user.name}}</td>
                     <td>
                         <a href="" class="pull-right" data-id="{{id}}"><i class="fa fa-pencil"></i></a>
@@ -522,7 +522,7 @@
                 {{#each events}}
                 <tr>
                     <td>{{name}}</td>
-                    <td>{{date}}</td>
+                    <td>{{formatDate date "%m/%d/%Y"}}</td>
                     <td>{{status}}</td>
                     <td>
                         <a href="" class="pull-right" data-id="{{id}}"><i class="fa fa-pencil"></i></a>
@@ -584,7 +584,7 @@
                 {{#each group.events}}
                 <tr>
                     <td><a href="" data-toggle="modal" data-target="#event_add-modal">{{name}}</a></td>
-                    <td>{{date}} {{start_time}}</td>
+                    <td>{{formatDate date "%m/%d/%Y"}} {{start_time}} </td>
                     <td>{{status}}</td>
                     <td>{{stats.invited_count}}</a></td>
                     <td>{{stats.rsvp_count}}</a></td>
@@ -762,10 +762,7 @@
 
                     <div class="row">
 
-                        <div class="form-group col-md-4">
-                            <label for="">Country</label>
-                            <input type="text" class="form-control" id="" value="{{location.country}}">
-                        </div>
+
 
                         <div class="form-group col-md-4">
                             <label for="">City</label>
