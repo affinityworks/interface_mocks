@@ -27,11 +27,39 @@ $(document).ready(function(){
     var template = Handlebars.compile($("#groups-signup-template").html());
     $("#content").append(template(data));
 
+
+
+    $("#nearby_groups").hide();
+
+
+    var input = document.getElementById('searchTextField');
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: "us"}
+     };
+    
+    autocomplete = new google.maps.places.Autocomplete(input,options);
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        document.getElementById('state').value = place.address_components[2].short_name;
+        document.getElementById('city').value = place.name;
+        document.getElementById('latitude').value = place.geometry.location.lat();
+        document.getElementById('longitude').value = place.geometry.location.lng();
+        $("#nearby_groups").show();
+
+    });
+
+
+
 });
 
 
 </script>        
-    
+  
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjDTJc7RFsQQAf7D3z_FhJ51HjdiR77y0&libraries=places"></script>
+  
+  
 <script type="text/javascript" src="js/public.js"></script> 
 
 </head>
@@ -85,17 +113,26 @@ $(document).ready(function(){
 
             <div class="form-group col-md-8">
                 <label for="">City</label>
-                <input type="text" class="form-control" id="" value="Oakland, CA">
+                <input type="text" class="form-control" id="searchTextField" value="" placeholder="Enter a city..">
             </div>
 
+            <input id="latitude" name="latitude" type="hidden">
+            <input id="longitude" name="longitude" type="hidden">
+            <input id="city" name="city" type="hidden">
+            <input id="state" name="state" type="hidden">
+            
+
    
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-12" id="nearby_groups">
                 <h4>Nearby Groups</h4>
-                <small>Check out the groups near you and see if you might want to join one before starting a new group</small><br>
-                {{#each group.nearby_groups}}
-                    <a href="{{url}}" target="_blank">{{name}}</a>, <small>{{distance}} miles away</small><br>
-                {{/each}}
-                <br>
+                    <small>Check out the groups near you and see if you might want to join one before starting a new group</small><br>
+                    {{#each group.nearby_groups}}
+                        <a href="{{url}}" target="_blank">{{name}}</a>, <small>{{distance}} miles away</small><br>
+                    {{/each}}
+                    <br>
+            </div>
+            <div class="form-group col-md-6" >
+
                 <label for="">Suggested group range</label>
                 <select class="form-control">
                     <option>5 miles</option>
