@@ -11,7 +11,6 @@
 
 
     <script type="text/javascript" src="js/data.js"></script> 
-    <script type="text/javascript" src="js/public.js"></script> 
 
 
 
@@ -37,15 +36,16 @@ $(document).ready(function(){
     
 </script>
 
+    <script type="text/javascript" src="js/public.js"></script> 
 
 
 
 </head>
 <body>
 <div class="container"> 
-<h1>Organization Header</h1>
+<h2> <img src="img/logo.png" height="50"> Advocacy Commons </h2> 
 <hr>
-<br>
+
 <div id="content"></div>
 
 
@@ -67,7 +67,7 @@ $(document).ready(function(){
         <div class="group_page-events">
             <h3><i class="fa fa-calendar"></i> Upcoming Events</h3>
             {{#each events}}
-            <a href=""><span class="label label-primary">RSVP</span> {{name}} {{date}}</a><br>
+            <a href="group_event.html"><span class="label label-primary">RSVP</span> {{name}}: {{date}} {{start_time}}</a><br>
             {{/each}}
             <hr>
         </div> 

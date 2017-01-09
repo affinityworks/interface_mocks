@@ -11,7 +11,6 @@
 
 
     <script type="text/javascript" src="js/data.js"></script> 
-    <script type="text/javascript" src="js/public.js"></script> 
 
 
 
@@ -26,23 +25,26 @@
 $(document).ready(function(){   
         
     var template = Handlebars.compile($("#groups-event-template").html());
-    $("#content").append(template(data.group.events[0]));
+    $("#content").append(template(data));
 
 });
 
 
 </script>        
     
+<script type="text/javascript" src="js/public.js"></script> 
+
 </head>
 <body>
 <div class="container"> 
-<h1>Organization Header</h1>
+<h2> <img src="img/logo.png" height="50"> Advocacy Commons </h2> 
 <hr>
-<br>
 <div id="content"></div>
 
 <script id="groups-event-template" type="text/x-handlebars-template">
+<h1>{{group.name}}</h1>
 
+{{#with group.events.[0]}}
     <div class="row">
 
     <div class="col-md-8 ">
@@ -92,8 +94,7 @@ $(document).ready(function(){
     </div>
 
 
-
-
+{{/with}}
 
 
 </script>

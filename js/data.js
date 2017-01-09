@@ -1,8 +1,8 @@
 var data={
-    group_id:1,
-    lang:"en",
-    url:"/groups/oakland",
     group:{
+        id:1,
+        lang:"en",
+        url:"/groups/oakland",
         name:"East Bay Rising",
         city:"Oakland",
         region:"CA",
@@ -45,7 +45,7 @@ var data={
             sticky:[
                 {
                     group_update_id:2343,
-                    title:"Welcome to Our Grop Page",
+                    title:"Welcome to Our Group Page",
                     content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet sodales mauris ut venenatis. Sed condimentum id nulla vel hendrerit. Vivamus eget egestas metus. Sed in ante vel ligula lobortis tristique vitae vitae nunc. Quisque sodales nec lorem at vehicula. Maecenas convallis eleifend sem et vulputate. Aliquam id risus massa. Quisque mollis dolor magna, ut finibus purus ornare ac.",
                     date:"",
                     sticky:"",  
