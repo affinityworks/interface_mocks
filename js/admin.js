@@ -71,22 +71,13 @@ $(document).ready(function(){
        $( ".group-member-search_search" ).show();
        $( ".group-member-search_add" ).show();
         
-       if (criteria == 'skill') {
-            $( ".group-member-search_input" ).show();
-           $(".group-member-search_input").attr("placeholder", "Select skills(s)");
 
-       }
-    
        if (criteria == 'tag') {
             $( ".group-member-search_input" ).show();
            $(".group-member-search_input").attr("placeholder", "Select tag(s)");
 
        }
-       if (criteria == 'group') {
-            $( ".group-member-search_input" ).show();
-           $(".group-member-search_input").attr("placeholder", "Select group(s)");
 
-       }
        if (criteria =='geo') {
             $( ".group-member-search_geo" ).show();
             $( ".group-member-search_input" ).hide();
@@ -94,6 +85,13 @@ $(document).ready(function(){
             $( ".group-member-search_add" ).hide();
 
         }
+
+       if (criteria == 'event') {
+           $( ".group-member-search_events" ).show();    
+           $( ".group-member-search_event_status" ).show();    
+            $( ".group-member-search_add" ).hide();
+
+       }
 
        if (criteria == 'field') {
            $( ".group-member-search_fields" ).show();    

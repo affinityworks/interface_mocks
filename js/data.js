@@ -1,16 +1,16 @@
 var data={
-    "group_id":1,
-    "lang":"en",
-    "url":"/en/groups/oakland",
-    "group":{
-        "name":"East Bay Rising",
-        "city":"Oakland",
-        "region":"CA",
-        "country":"US",
-        "latitude":"37.8044",
-        "longitude":"-122.2708",
-        "truf_range":"10",
-        "turf_shape":[
+    group_id:1,
+    lang:"en",
+    url:"/groups/oakland",
+    group:{
+        name:"East Bay Rising",
+        city:"Oakland",
+        region:"CA",
+        country:"US",
+        latitude:"37.8044",
+        longitude:"-122.2708",
+        truf_range:"10",
+        turf_shape:[
             "37.96260604160774, -122.42752075195312",
             "37.90411590881245, -122.39593505859375",
             "37.826056694926535, -122.34100341796875",
@@ -20,25 +20,25 @@ var data={
             "37.83148014503287, -122.08419799804688",
             "37.95286091815649, -122.23251342773438"
         ],
-        "contact_name":"Jane Doe",
-        "contact_phone":"510-435-8920",
-        "contact_emails":"name@gmail.com",
-        "facebook_page_url":"http://facebook.com/GroupName",
-        "stats":{
-            "member_count":10,
-            "recent_count":3,
-            "universe_count":5234            
+        contact_name:"Jane Doe",
+        contact_phone:"510-435-8920",
+        contact_emails:"name@gmail.com",
+        facebook_page_url:"http://facebook.com/GroupName",
+        stats:{
+            member_count:10,
+            recent_count:3,
+            universe_count:5234            
         },
-        "leaders":[
+        leaders:[
             {
-                "user_id":"",
-                "name":"Jane Doe",
-                "facebook_id":"61731840657"
+                user_id:"",
+                name:"Jane Doe",
+                facebook_id:"61731840657"
             },
             {
-                "user_id":"",
-                "name":"Annie Sartor",
-                "facebook_id":"507088373"
+                user_id:"",
+                name:"Annie Sartor",
+                facebook_id:"507088373"
             }            
         ],
         members:[
@@ -212,7 +212,7 @@ var data={
                             {
                                 id:123433,
                                 first_name:"Sam",
-                                last_name:"Fishhead",
+                                last_name:"Goatface",
                                 facebook_user_id:"61731840657",
                                 phone:"333-333-3333",
                                 date:"2017-01-01"
@@ -266,9 +266,9 @@ var data={
             name:"Phone Bank"
         }
     ],
-    "admin_user":{
-        "user_id":"",
-        "name":"Jane Doe",
-        "facebook_id":"61731840657"        
+    admin_user:{
+        user_id:"",
+        name:"Jane Doe",
+        facebook_id:"61731840657"        
     }
 }
