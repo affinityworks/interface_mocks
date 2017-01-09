@@ -64,6 +64,8 @@ $(document).ready(function(){
             </div>
         {{/each}}
 
+
+        {{#if events}}
         <div class="group_page-events">
             <h3><i class="fa fa-calendar"></i> Upcoming Events</h3>
             {{#each events}}
@@ -71,6 +73,8 @@ $(document).ready(function(){
             {{/each}}
             <hr>
         </div> 
+        {{/if}}
+
 
         {{#each updates.regular}}
             <div class="group_page-update_row">

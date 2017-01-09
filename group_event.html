@@ -10,6 +10,7 @@
     <script type="text/javascript" src="vendor/swag/lib/swag.js"></script> 
 
 
+
     <script type="text/javascript" src="js/data.js"></script> 
 
 
@@ -27,10 +28,35 @@ $(document).ready(function(){
     var template = Handlebars.compile($("#groups-event-template").html());
     $("#content").append(template(data));
 
+
+
+
+
 });
 
 
+
+     function initMap() {
+        var myLatLng = {lat: 37.8044, lng: -122.2708};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: data.group.events[0].location.venue
+        });
+      }
+
 </script>        
+ 
+   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjDTJc7RFsQQAf7D3z_FhJ51HjdiR77y0&callback=initMap">
+    </script>
+
     
 <script type="text/javascript" src="js/public.js"></script> 
 
@@ -40,6 +66,8 @@ $(document).ready(function(){
 <h2> <img src="img/logo.png" height="50"> Advocacy Commons </h2> 
 <hr>
 <div id="content"></div>
+    <div id="map"></div>
+
 
 <script id="groups-event-template" type="text/x-handlebars-template">
 <h1>{{group.name}}</h1>
@@ -59,6 +87,9 @@ $(document).ready(function(){
 {{location.directions}}<br>
 {{location.latitude}}<br>
 {{location.longitude}}<br>
+
+
+
     </div>
 
 
