@@ -21,9 +21,9 @@ var data={
             "37.95286091815649, -122.23251342773438"
         ],
         contact_name:"Jane Doe",
-        contact_phone:"510-435-8920",
+        contact_phone:"555-555-5555",
         contact_emails:"name@gmail.com",
-        facebook_page_url:"http://facebook.com/GroupName",
+        facebook_page_url:"http://facebook.com/STOPtrump",
         stats:{
             member_count:10,
             recent_count:3,
@@ -41,6 +41,31 @@ var data={
                 facebook_id:"507088373"
             }            
         ],
+        updates:{
+            sticky:[
+                {
+                    group_update_id:2343,
+                    title:"Welcome to Our Grop Page",
+                    content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet sodales mauris ut venenatis. Sed condimentum id nulla vel hendrerit. Vivamus eget egestas metus. Sed in ante vel ligula lobortis tristique vitae vitae nunc. Quisque sodales nec lorem at vehicula. Maecenas convallis eleifend sem et vulputate. Aliquam id risus massa. Quisque mollis dolor magna, ut finibus purus ornare ac.",
+                    date:"",
+                    sticky:"",  
+                    user_id:"",              
+                    published:true
+                }
+            ],
+            regular:[
+                {
+                    group_update_id:2343,
+                    title:"This is an important update",
+                    content:"fLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet sodales mauris ut venenatis. Sed condimentum id nulla vel hendrerit. Vivamus eget egestas metus. Sed in ante vel ligula lobortis tristique vitae vitae nunc. Quisque sodales nec lorem at vehicula. Maecenas convallis eleifend sem et vulputate. Aliquam id risus massa. Quisque mollis dolor magna, ut finibus purus ornare ac.",
+                    date:"2017-01-01",
+                    sticky:"",  
+                    user_id:"",              
+                    published:true
+                }
+            ]
+        },
+        
         members:[
             {
                 user_id:12345,
@@ -168,7 +193,13 @@ var data={
                 name:"San Francisco Actions",
                 group_id:"12",
                 url:"/en/groups/san_francsico",
-                distance:"24"
+                distance:"14"
+            },
+            {
+                name:"San Jose Action Grouyp",
+                group_id:"12",
+                url:"/en/groups/san_jose",
+                distance:"37"
             }
         ],
         events:[
