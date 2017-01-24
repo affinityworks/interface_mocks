@@ -313,7 +313,8 @@ $( ".group_admin-add_group--toggle").click(function() {
             </tbody>
           </table>
 
-        
+
+              
         <div class="modal fade" id="group_member-note-modal" tabindex="-1" role="dialog" aria-labelledby="group_member-note-modal" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -388,6 +389,51 @@ $( ".group_admin-add_group--toggle").click(function() {
 </div>        
 
 
+<div class="modal fade" id="group_admin-add-existing-leader" tabindex="-1" role="dialog" aria-labelledby="group_admin-add-existing-leader" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >Make an existing user an group leader</h4>
+            </div>
+            <div class="modal-body">
+              <div class = "row col-md-12">
+                  <div claas="col-md-4">
+                    <input placeholder="Enter User's Name" > <button class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                  </div>
+                  <div class="pull-right">
+                        <strong>Searching for: </strong> {{search.term}}
+                  </div>
+
+              </div>
+              
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                       <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each search.results}}
+                    <tr>
+                    <td>{{first_name}}</td>
+                    <td>{{last_name}}</td>
+                    <td>{{city}}</td>
+                    <td>{{region}}</td>
+                    <td><button class="btn btn-small btn-primary">Make Admin</button>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                </tabel>
+            
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </script>
@@ -416,7 +462,7 @@ $( ".group_admin-add_group--toggle").click(function() {
                     
                     <div class="col-md-6">
                         <div class="pull-right">
-                        <a href="#" data-toggle="modal" data-target="#group_member-add-modal"><i class="fa fa-plus"></i> add existing leader</a> | <a href=""><i class="fa fa-user-plus"></i> add new leader</a>
+                        <a href="#" data-toggle="modal" data-target="#group_admin-add-existing-leader"><i class="fa fa-plus"></i> add existing leader</a> | <a href="#" data-toggle="modal" data-target="#group_member-add-modal"><i class="fa fa-user-plus"></i> add new leader</a>
                     </div>
                     </div>                    
                 </div>

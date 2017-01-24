@@ -367,5 +367,24 @@ var data={
         user_id:"",
         name:"Jane Doe",
         facebook_id:"61731840657"        
+    },
+    search:{
+        term:"david",
+        results:[
+            {
+                id:123,
+                first_name:"David",
+                last_name:"Person",
+                city:"Oakland",
+                region:"CA"
+            },
+            {
+                id:123,
+                first_name:"Sara",
+                last_name:"Davidson",
+                city:"Oakland",
+                region:"CA"
+            }        
+        ]
     }
 }
