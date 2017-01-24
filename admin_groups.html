@@ -100,8 +100,8 @@ $( ".group_admin-add_group--toggle").click(function() {
  <table class="table table-striped">
     <thead>
         <th>Name</th>
-        <th>City</th>
-        <th>State</th>
+        <th>Location</th>
+        <th></th>
         <th>Description</th>
         <th>Public Contact</th>
         <th>Leaders</th>
@@ -112,7 +112,12 @@ $( ".group_admin-add_group--toggle").click(function() {
     <tbody>
         {{#each groups}}
         <tr>        
-            <td><a href="#" data-id="{{id}}" class="group_admin-edit_group--toggle">{{name}}</a></td>            
+            <td class="col-md-2"><a href="#" data-id="{{id}}" class="group_admin-edit_group--toggle">{{name}}</a>
+            
+               {{#if stats.member_count}} <br><br><small><a href="admin_user.html" target="_blank">({{stats.member_count}} members</a></small>){{/if}}
+
+            
+            </td>            
             <td>{{city}}</td>            
             <td>{{region}}</td>            
             <td class="col-md-2"><small>{{description}}</small></td>
@@ -133,11 +138,10 @@ $( ".group_admin-add_group--toggle").click(function() {
            </td>
            <td class="col-md-2">
             {{#each leaders}}
-           
                 {{#if facebook_id}}<a href="https://facebook.com/{{facebook_id}}" target="_blank" title="https://facebook.com/{{facebook_id}}"><img src="http://graph.facebook.com/{{facebook_id}}/picture?type=square&amp;height=20&amp;width=20"></a> {{/if}}<a href="#" data-id="{{id}}">{{name}}</a><br>
             {{/each}}
+        
             </td>
-
 
                 
             <td>{{#each notes}}

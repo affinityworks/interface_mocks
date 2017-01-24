@@ -319,6 +319,11 @@ var data={
             }
 
         ],
+        stats:{
+            member_count:1234,
+            recent_count:3,
+            universe_count:5234            
+        },
 
         leaders:[
             {
