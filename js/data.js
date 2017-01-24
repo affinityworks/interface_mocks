@@ -1,5 +1,6 @@
 var data={
-    group:{
+    groups:[
+    {
         id:1,
         lang:"en",
         url:"/groups/oakland",
@@ -8,6 +9,7 @@ var data={
         status:'live',
         city:"Oakland",
         region:"CA",
+        zip:"94602",
         country:"US",
         latitude:"37.8044",
         longitude:"-122.2708",
@@ -292,7 +294,8 @@ var data={
 
             }
         ]
-    },
+    }
+    ],
     tags:[
         {
             id:1,
