@@ -4,6 +4,8 @@ var data={
         lang:"en",
         url:"/groups/oakland",
         name:"East Bay Rising",
+        description: "We are a super awesome group that is doing an lot of important organizing in our region",
+        status:'live',
         city:"Oakland",
         region:"CA",
         country:"US",
@@ -22,8 +24,22 @@ var data={
         ],
         contact_name:"Jane Doe",
         contact_phone:"555-555-5555",
-        contact_emails:"name@gmail.com",
+        contact_email:"name@gmail.com",
         facebook_page_url:"http://facebook.com/STOPtrump",
+        website_url:"https://bayresistance.org",
+        twitter:"STOPtrump",
+        notes:[
+            {
+                note:"This is a great group",
+                date_created: "2017-01-10",
+                admin_user:"David"
+            },
+            {
+                note:"They turned out 20 people to the march",
+                date_created: "2017-01-17",
+                admin_user:"Annie"
+            },
+        ],
         stats:{
             member_count:10,
             recent_count:3,
@@ -37,8 +53,8 @@ var data={
             },
             {
                 user_id:"",
-                name:"Annie Sartor",
-                facebook_id:"507088373"
+                name:"Bob Activist",
+                facebook_id:"124955570892789"
             }            
         ],
         updates:{

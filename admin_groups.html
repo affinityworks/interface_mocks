@@ -1,0 +1,132 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    
+    <script type="text/javascript" src="vendor/swag/lib/swag.js"></script> 
+
+
+    <script type="text/javascript" src="js/data.js"></script> 
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet"> 
+    
+    
+<script>
+$(document).ready(function(){   
+    
+    var template = Handlebars.compile($("#groups-admin-template").html());
+    $("#content").append(template(data));    
+    
+    
+    $(".group_admin-add_note").hide();
+    $( ".group_admin-add_note--toggle").click(function() {
+        $(".group_admin-add_note").toggle();
+        return false;
+    });    
+
+    $( ".group_admin-save_note").click(function() {
+        $(".group_admin-add_note").toggle();
+        return false;
+    });  
+
+});
+   
+</script>
+
+
+  
+    </head>
+<body>
+<div class="container"> 
+<h2> <img src="img/logo.png" height="50"> Advocacy Commons </h2> 
+<hr>
+
+<div id="content"></div>
+
+
+
+<script id="groups-admin-template" type="text/x-handlebars-template">
+
+    <h2>Manage Local Groups</h2>
+
+<button class="btn btn-primary pull-right">Add a new group</button>
+<input placeholder="Search">
+
+
+ <table class="table table-striped">
+    <thead>
+        <th>Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Description</th>
+        <th>Websites</th>
+        <th>Public Contact</th>
+        <th>Leaders</th>
+
+        <th>Internal Notes</th>
+        <th>Status</th>
+
+    </thead>
+    <tbody>
+        <tr>        
+            <td>{{group.name}}</td>            
+            <td>{{group.city}}</td>            
+            <td>{{group.region}}</td>            
+            <td class="col-md-2"><small>{{group.description}}</small></td>
+
+            <td>
+                {{#if group.website_url}}<a href="{{group.website_url}}" target="_blank" title="{{group.website_url}}"><i class="fa fa-globe"></i></a>{{/if}}
+{{#if group.twitter}}<a href="https://twitter.com/{{group.twitter}}" target="_blank" title="{{group.twitter}}"><i class="fa fa-twitter"></i></a>{{/if}}
+{{#if group.facebook_page_url}}<a href="{{group.facebook_page_url}}" target="_blank" title="{{group.facebook_page_url}}"><i class="fa fa-facebook"></i></a>{{/if}}
+                </td>          
+            <td>{{group.contact_name}}
+                {{#if group.contact_phone}}<br>{{group.contact_phone}}{{/if}}
+                {{#if group.contact_email}}<br><a href="mailto:{{group.contact_email}}">{{group.contact_email}}</a>{{/if}}
+           </td>
+           <td class="col-md-2">
+            {{#each group.leaders}}
+           
+                {{#if facebook_id}}<a href="https://facebook.com/{{facebook_id}}" target="_blank" title="https://facebook.com/{{facebook_id}}"><img src="http://graph.facebook.com/{{facebook_id}}/picture?type=square&amp;height=20&amp;width=20"></a> {{/if}}<a href="#" data-id="{{id}}">{{name}}</a><br>
+            {{/each}}
+            </td>
+
+
+            <td>{{#each group.notes}}
+               {{#if note}}<small>{{note}} ({{date_created}}: {{admin_user}})</small><br><br>{{/if}}
+            {{/each}}
+            <div class="pull-right"><small><a href="#" class="group_admin-add_note--toggle"><i class="fa fa-plus"></i> Add Note</a></small></div>
+            <div class="group_admin-add_note">
+                <textarea rows="2" placeholder="Add Note"></textarea><button class="btn btn-xs btn-primary group_admin-save_note">Save Note</button>
+                
+            </div>
+            </td>
+
+            <td>
+                {{group.status}}<br><br>
+               <!-- <button class="btn btn-xs btn-success">approve</button> -->          
+                <button class="btn btn-xs btn-danger">unpublish</button>            
+                <!--<button class="btn btn-xs btn-warning">publish</button>-->
+            </td>            
+
+
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+</script>
+
+
+</div>
+</body>
+</html>
