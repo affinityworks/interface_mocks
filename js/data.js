@@ -5,8 +5,8 @@ var data={
         lang:"en",
         url:"/groups/oakland",
         name:"East Bay Rising",
-        description: "We are a super awesome group that is doing an lot of important organizing in our region",
-        status:'live',
+        description: "Taking action to defund communities in the east bay ",
+        status:'approved',
         city:"Oakland",
         region:"CA",
         zip:"94602",
@@ -294,7 +294,48 @@ var data={
 
             }
         ]
+    },
+    {
+        id:2,
+        lang:"en",
+        url:"/groups/sf",
+        name:"SF Action",
+        description: "We are a super awesome group that is doing an lot of important organizing in our region",
+        status:'pending',
+        city:"San Francisco",
+        region:"CA",
+        zip:"94110",
+        country:"US",
+        contact_name:"Jose Doe",
+        contact_phone:"555-555-5555",
+        contact_email:"otheranme@gmail.com",
+        facebook_page_url:"http://facebook.com/STOPtrump",
+        website_url:"https://bayresistance.org",
+        twitter:"STOPtrump",
+        notes:[
+            {
+                note:"This is a also a great group",
+                date_created: "2017-01-10",
+                admin_user:"David"
+            }
+
+        ],
+
+        leaders:[
+            {
+                user_id:"1323",
+                name:"Jose Doe",
+                facebook_id:"61731840657"
+            },
+            {
+                user_id:"233",
+                name:"Sally Person",
+                facebook_id:"124955570892789"
+            }            
+        ]
+     
     }
+    
     ],
     tags:[
         {

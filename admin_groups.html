@@ -22,6 +22,10 @@
 <script>
 $(document).ready(function(){   
     
+    Swag.registerHelpers(window.Handlebars);
+
+    
+    
     var template = Handlebars.compile($("#groups-admin-template").html());
     $("#content").append(template(data));    
 
@@ -137,7 +141,7 @@ $( ".group_admin-add_group--toggle").click(function() {
 
                 
             <td>{{#each notes}}
-               {{#if note}}<small>{{note}} ({{date_created}}: {{admin_user}})</small><br><br>{{/if}}
+               {{#if note}}<small>{{note}} <strong>({{date_created}} by {{admin_user}})</strong></small><br><br>{{/if}}
             {{/each}}
             <div class="pull-right"><small><a href="#" class="group_admin-add_note--toggle"><i class="fa fa-plus"></i> Add Note</a></small></div>
             <div class="group_admin-add_note">
@@ -148,9 +152,9 @@ $( ".group_admin-add_group--toggle").click(function() {
 
             <td>
                 {{status}}<br><br>
-               <!-- <button class="btn btn-xs btn-success">approve</button> -->          
-                <button class="btn btn-xs btn-danger" data-id={{id}}>unpublish</button>            
-                <!--<button class="btn btn-xs btn-warning">publish</button>-->
+               {{#is status "pending"}} <button class="btn btn-xs btn-success">approve</button> {{/is}}         
+               {{#is status "live"}} <button class="btn btn-xs btn-danger" data-id={{id}}>unpublish</button> {{/is}}           
+               {{#is status "unpublished"}} <button class="btn btn-xs btn-warning">publish</button>{{/is}}
             </td>            
 
 
