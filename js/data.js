@@ -6,7 +6,7 @@ var data={
         url:"/groups/oakland",
         name:"East Bay Rising",
         description: "Taking action to defund communities in the east bay ",
-        status:'approved',
+        status:'live',
         city:"Oakland",
         region:"CA",
         zip:"94602",
