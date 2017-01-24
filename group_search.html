@@ -89,7 +89,7 @@ $(document).ready(function(){
 <script id="groups-search-template" type="text/x-handlebars-template">
 
 <h3>Groups near you</h3>
-{{#each group.nearby_groups}}
+{{#each groups.0.nearby_groups}}
 <h4><a href="{{url}}">{{name}}</a></h4>
 {{distance}} miles away ({{city}})
 {{/each}}

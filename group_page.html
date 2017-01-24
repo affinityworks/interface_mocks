@@ -21,7 +21,7 @@
 $(document).ready(function(){   
 
     var template = Handlebars.compile($("#groups-page-template").html());
-    $("#content").append(template(data.group));
+    $("#content").append(template(data.groups[0]));
 
 });
     
