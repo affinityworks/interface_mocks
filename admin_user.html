@@ -48,7 +48,7 @@
           </ul>
         </div>
     </div>
-    <h2> <img src="img/logo.png" height="50"> Advocacy Commons <small>{{group.name}}</small></h2>
+    <h2> <img src="img/logo.png" height="50"> Advocacy Commons <small>{{groups.0.name}}</small></h2>
     <!--<div class="g-blue-wide-line"></div> -->
     
     <hr>
@@ -134,7 +134,7 @@
     <div class="form-group">
         <select class="forn-control group-member-search_events group-member-search_item " name="events">
             <option value="">select event </option>
-            {{#each group.events}}
+            {{#each groups.0.events}}
             <option value="{{id}}">{{name}}: {{formatDate date "%m/%d/%Y"}}</option>
             {{/each}}
         </select>
@@ -250,7 +250,7 @@
                         <div class="form-group  ">
                             <select class="form-control">
                                 <option value="">Select Event</option>
-                                {{#each group.events}}
+                                {{#each groups.0.events}}
                                 <option value="{{id}}">{{name}}: {{formatDate date "%m/%d/%Y"}}</option>
                                 {{/each}}
                             </select> 
@@ -304,7 +304,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each group.members}}
+                {{#each groups.0.members}}
 
 
                 <tr>
@@ -349,7 +349,7 @@
         <h4 class="modal-title" >Update Member</h4>
       </div>
       <div class="modal-body">
-      {{#with group.members.[0]}}
+      {{#with groups.0.members.[0]}}
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -581,7 +581,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each group.events}}
+                {{#each groups.0.events}}
                 <tr>
                     <td><a href="" data-toggle="modal" data-target="#event_add-modal">{{name}}</a></td>
                     <td>{{formatDate date "%m/%d/%Y"}} {{start_time}} </td>
@@ -620,7 +620,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#with group.events.[0]}}
+                                    {{#with groups.0.events.[0]}}
                                     {{#each users.rsvp}}
                                     <tr>
                                         <td><input type="checkbox"></td>
@@ -725,7 +725,7 @@
               </div>
               <div class="modal-body">
 
-              {{#with group.events.[0]}}
+              {{#with groups.0.events.[0]}}
                <div id="event_deatil">
 
 
