@@ -310,7 +310,6 @@ var data={
         contact_phone:"555-555-5555",
         contact_email:"otheranme@gmail.com",
         facebook_page_url:"http://facebook.com/STOPtrump",
-        website_url:"https://bayresistance.org",
         twitter:"STOPtrump",
         notes:[
             {
