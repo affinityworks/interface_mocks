@@ -4,15 +4,15 @@ var data={
         id:1,
         lang:"en",
         url:"/groups/oakland",
-        name:"Indivisible Boulder",
-        description: "we are group of like-minded people",
+        name:"East Bay Rising",
+        description: "Taking action to defund communities in the east bay ",
         status:'live',
-        city:"Boulder",
-        region:"CO",
-        zip:"80302",
+        city:"Oakland",
+        region:"CA",
+        zip:"94602",
         country:"US",
-        latitude:"40.014984",
-        longitude:"-105.270546",
+        latitude:"37.8044",
+        longitude:"-122.2708",
         truf_range:"10",
         turf_shape:[
             "37.96260604160774, -122.42752075195312",
@@ -24,17 +24,17 @@ var data={
             "37.83148014503287, -122.08419799804688",
             "37.95286091815649, -122.23251342773438"
         ],
-        contact_name:"Dianna Rands",
-        contact_phone:"",
-        contact_email:"dianna@diannarands.com",
-        facebook_page_url:"https://www.facebook.com/groups/indivisibleboulder",
-        website_url:"",
-        twitter:"",
+        contact_name:"Jane Doe",
+        contact_phone:"555-555-5555",
+        contact_email:"name@gmail.com",
+        facebook_page_url:"http://facebook.com/STOPtrump",
+        website_url:"https://bayresistance.org",
+        twitter:"STOPtrump",
         notes:[
             {
                 note:"This is a great group",
                 date_created: "2017-01-10",
-                admin_user:"Dianna"
+                admin_user:"David"
             },
             {
                 note:"They turned out 20 people to the march",
@@ -50,7 +50,7 @@ var data={
         leaders:[
             {
                 user_id:"",
-                name:"Dianna Rands",
+                name:"Jane Doe",
                 facebook_id:"61731840657"
             },
             {
@@ -88,10 +88,10 @@ var data={
             {
                 user_id:12345,
                 avatar:"",
-                first_name:"Dianna",
-                last_name:"Rands",
-                phone:"",
-                email:"dianna@diannarands.com",
+                first_name:"Jane",
+                last_name:"Doe",
+                phone:"555-555-5555",
+                email:"name@gmail.com",
                 facebook_user_id:61731840657,
                 twitter_name:"dDoe",
                 activist_score:"4",
@@ -367,24 +367,5 @@ var data={
         user_id:"",
         name:"Jane Doe",
         facebook_id:"61731840657"        
-    },
-    search:{
-        term:"david",
-        results:[
-            {
-                id:123,
-                first_name:"David",
-                last_name:"Person",
-                city:"Oakland",
-                region:"CA"
-            },
-            {
-                id:123,
-                first_name:"Sara",
-                last_name:"Davidson",
-                city:"Oakland",
-                region:"CA"
-            }        
-        ]
     }
 }
