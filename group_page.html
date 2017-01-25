@@ -115,6 +115,7 @@ $(document).ready(function(){
         </div>
 
 
+
         {{#if facebook_page_url}}
         <div class="well">
             <h4><i class="fa fa-facebook-square"></i> {{name}} on Facebook</h4>
@@ -123,6 +124,13 @@ $(document).ready(function(){
         <br>
 
         {{/if}}
+
+        {{#if twitter}}
+        <div class="well">
+            <a class="twitter-timeline" href="https://twitter.com/{{twitter}}" data-tweet-limit=1 data-chrome="nofooter"></a> 
+        </div>
+        {{/if}}
+
        
         {{#if contact_name}}
         <div class="well">
@@ -153,4 +161,6 @@ $(document).ready(function(){
     
 </div>
 </body>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </html>

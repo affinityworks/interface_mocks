@@ -54,8 +54,12 @@
     <hr>
     <ul class="nav nav-tabs" role="tablist" id="translate_row-nav_en">
 
-        <li role="presentation" class="group_nav-members"><a href="#group_pannel-members" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-users"></i> Members</a></li>
+        <li role="presentation" class="active group_nav-members"><a href="#group_pannel-members" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-users"></i> Members</a></li>
         <li role="presentation" class="group_nav-events"><a href="#group_pannel-events" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-calendar"></i> Events</a></li>
+        
+
+        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-updates" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-desktop"></i> Group Webpage</a></li>
+              
 
     </ul>
 
@@ -714,6 +718,145 @@
 
                             
         </div>
+    </div>
+    
+    
+    
+    <div role="tabpanel" class="tab-pane" id="group_pannel-updates">
+        <h3><i class="fa fa-desktop"></i> Website Updates</h3>
+        <br>
+        <div class="pull-right">
+            <a href="" data-toggle="modal" data-target="#group_update-add_modal"><i class="fa fa-plus"></i> Add New Update</a>
+        </div>
+
+        <b>Webpage URL:</b> <a href="group_page.html"  data-toggle="modal" data-target="#group_page-modal"><i class="fa fa-eye"></i> {{groups.0.url}} </a><br/>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each groups.0.updates.sticky}}
+                <tr>
+                    <td><a href="" data-value="{{@key}}"><i class="fa fa-pencil"></i></a></td>
+                    <td>{{title}}</td>
+                    <td class="col-md-7"><small>{{content}}</small></td>
+                    <td><small>{{date}}</small></td>
+                    <td><small>Sticky</small></td>
+                    <td><small>{{#if published}}Published{{else}}Unpublished{{/if}}</small></td>
+                </tr>
+                {{/each}}
+
+                {{#each groups.0.updates.regular}}
+                <tr>
+                    <td><a href="" data-value="{{@key}}"><i class="fa fa-pencil"></i></a></td>
+                    <td>{{title}}</td>
+                    <td class="col-md-7"><small>{{content}}</small></td>
+                    <td><small>{{date}}</small></td>
+                    <td><small>Regular</small></td>
+                    <td><small>{{#if published}}Published{{else}}Unpublished{{/if}}</small></td>
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+        
+        <br>
+        <hr>
+        <br>
+        
+          <h3><i class="fa fa-bullhorn"></i> Group Details</h3>  
+            
+            <div class="row">
+
+            <div class="form-group col-md-4 ">
+                <label for=""><i class="fa fa-bullhorn"></i> Group Name</label>
+                <input type="text" class="form-control" id="group_details-name" value="{{name}}">
+            </div>
+
+            <div class="form-group col-md-8 ">
+                <label for=""><i class="fa fa-commenting-o"></i> Group Description</label>
+                <textarea  class="form-control" id="group_details-description" rows=2>{{description}}</textarea>
+                
+            </div>
+    
+            </div>            
+
+            <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="">City</label>
+                        <input type="text" class="form-control" id="group_details-contact_city" value="{{city}}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="">State</label>
+                        <input type="text" class="form-control" id="group_details-contact_region" value="{{region}}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="">Zip Code</label>
+                        <input type="text" class="form-control" id="group_details-contact_zip" value="{{zip}}">
+                    </div>
+            </div>
+
+          
+           <br> 
+            
+            <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for=""><i class="fa fa-user"></i> Public Group Contact Name</label>
+                        <input type="text" class="form-control" id="group_details-contact_name" value="{{contact_name}}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for=""><i class="fa fa-phone"></i> Public Group Contact Phone</label>
+                        <input type="text" class="form-control" id="group_details-contact_phone" value="{{contact_phone}}">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for=""><i class="fa fa-envelope"></i> Public Group Contact Email</label>
+                        <input type="text" class="form-control" id="group_details-contact_email" value="{{contact_email}}">
+                    </div>
+            </div>
+       
+
+           <br> 
+            <div class="row">
+
+                <div class="form-group col-md-4">
+                    <label for=""><i class="fa fa-facebook"></i>  Facebook Group URL</label>
+                    <input type="text" class="form-control" id="group_details-facebook_page_url" value="{{facebook_page_url}}">
+                    <p class="help-block">Make sure to start with http:// or https://</p>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for=""><i class="fa fa-twitter"></i> Twitter Name</label>
+                    <input type="text" class="form-control" id="group_details-twitter" value="{{twitter}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for=""><i class="fa fa-globe"></i> Website URL</label>
+                    <input type="text" class="form-control" id="group_details-website_url" value="{{website_url}}">
+                    <p class="help-block">Make sure to start with http:// or https://</p>
+                </div>
+
+            </div>  
+            <button class="g-button btn btn-lg btn-success group_admin-save--toggle "><i class="fa fa-save"></i> Save</button>
+
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
         
         
         <div class="modal fade" id="event_add-modal" tabindex="-1" role="dialog" aria-labelledby="event_add-modal" aria-hidden="true">
@@ -814,6 +957,8 @@
 </div>
 
 </script>
+
+
 
 <div id="content"></div>
 
