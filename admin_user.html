@@ -778,12 +778,12 @@
 
             <div class="form-group col-md-4 ">
                 <label for=""><i class="fa fa-bullhorn"></i> Group Name</label>
-                <input type="text" class="form-control" id="group_details-name" value="{{name}}">
+                <input type="text" class="form-control" id="group_details-name" value="{{groups.0.name}}">
             </div>
 
-            <div class="form-group col-md-8 ">
+            <div class="form-group col-md-6 ">
                 <label for=""><i class="fa fa-commenting-o"></i> Group Description</label>
-                <textarea  class="form-control" id="group_details-description" rows=2>{{description}}</textarea>
+                <textarea  class="form-control" id="group_details-description" rows=2>{{groups.0.description}}</textarea>
                 
             </div>
     
@@ -792,15 +792,15 @@
             <div class="row">
                     <div class="form-group col-md-4">
                         <label for="">City</label>
-                        <input type="text" class="form-control" id="group_details-contact_city" value="{{city}}">
+                        <input type="text" class="form-control" id="group_details-contact_city" value="{{groups.0.city}}">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                         <label for="">State</label>
-                        <input type="text" class="form-control" id="group_details-contact_region" value="{{region}}">
+                        <input type="text" class="form-control" id="group_details-contact_region" value="{{groups.0.region}}">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                         <label for="">Zip Code</label>
-                        <input type="text" class="form-control" id="group_details-contact_zip" value="{{zip}}">
+                        <input type="text" class="form-control" id="group_details-contact_zip" value="{{groups.0.zip}}">
                     </div>
             </div>
 
@@ -810,15 +810,15 @@
             <div class="row">
                     <div class="form-group col-md-4">
                         <label for=""><i class="fa fa-user"></i> Public Group Contact Name</label>
-                        <input type="text" class="form-control" id="group_details-contact_name" value="{{contact_name}}">
+                        <input type="text" class="form-control" id="group_details-contact_name" value="{{groups.0.contact_name}}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for=""><i class="fa fa-phone"></i> Public Group Contact Phone</label>
-                        <input type="text" class="form-control" id="group_details-contact_phone" value="{{contact_phone}}">
+                        <input type="text" class="form-control" id="group_details-contact_phone" value="{{groups.0.contact_phone}}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for=""><i class="fa fa-envelope"></i> Public Group Contact Email</label>
-                        <input type="text" class="form-control" id="group_details-contact_email" value="{{contact_email}}">
+                        <input type="text" class="form-control" id="group_details-contact_email" value="{{groups.0.contact_email}}">
                     </div>
             </div>
        
@@ -828,18 +828,18 @@
 
                 <div class="form-group col-md-4">
                     <label for=""><i class="fa fa-facebook"></i>  Facebook Group URL</label>
-                    <input type="text" class="form-control" id="group_details-facebook_page_url" value="{{facebook_page_url}}">
+                    <input type="text" class="form-control" id="group_details-facebook_page_url" value="{{groups.0.facebook_page_url}}">
                     <p class="help-block">Make sure to start with http:// or https://</p>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for=""><i class="fa fa-twitter"></i> Twitter Name</label>
-                    <input type="text" class="form-control" id="group_details-twitter" value="{{twitter}}">
+                    <input type="text" class="form-control" id="group_details-twitter" value="{{groups.0.twitter}}">
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for=""><i class="fa fa-globe"></i> Website URL</label>
-                    <input type="text" class="form-control" id="group_details-website_url" value="{{website_url}}">
+                    <input type="text" class="form-control" id="group_details-website_url" value="{{groups.0.website_url}}">
                     <p class="help-block">Make sure to start with http:// or https://</p>
                 </div>
 
