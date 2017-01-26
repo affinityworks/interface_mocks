@@ -65,10 +65,10 @@ var data={
                     group_update_id:2343,
                     title:"Welcome to Our Group Page",
                     content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet sodales mauris ut venenatis. Sed condimentum id nulla vel hendrerit. Vivamus eget egestas metus. Sed in ante vel ligula lobortis tristique vitae vitae nunc. Quisque sodales nec lorem at vehicula. Maecenas convallis eleifend sem et vulputate. Aliquam id risus massa. Quisque mollis dolor magna, ut finibus purus ornare ac.",
-                    date:"",
-                    sticky:"",  
-                    user_id:"",              
-                    published:true
+                    date:"2017-01-02",
+                    sticky:1,  
+                    admin_user_id:"1",              
+                    published:1
                 }
             ],
             regular:[
@@ -77,9 +77,9 @@ var data={
                     title:"This is an important update",
                     content:"fLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc imperdiet sodales mauris ut venenatis. Sed condimentum id nulla vel hendrerit. Vivamus eget egestas metus. Sed in ante vel ligula lobortis tristique vitae vitae nunc. Quisque sodales nec lorem at vehicula. Maecenas convallis eleifend sem et vulputate. Aliquam id risus massa. Quisque mollis dolor magna, ut finibus purus ornare ac.",
                     date:"2017-01-01",
-                    sticky:"",  
-                    user_id:"",              
-                    published:true
+                    sticky:0,  
+                    admin_user_id:"1",              
+                    published:1
                 }
             ]
         },

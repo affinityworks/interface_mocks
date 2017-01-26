@@ -745,7 +745,7 @@
             <tbody>
                 {{#each groups.0.updates.sticky}}
                 <tr>
-                    <td><a href="" data-value="{{@key}}"><i class="fa fa-pencil"></i></a></td>
+                    <td> <a href="" data-toggle="modal" data-target="#group_update-add_modal"><i class="fa fa-pencil"></i></a></td>
                     <td>{{title}}</td>
                     <td class="col-md-7"><small>{{content}}</small></td>
                     <td><small>{{date}}</small></td>
@@ -756,7 +756,7 @@
 
                 {{#each groups.0.updates.regular}}
                 <tr>
-                    <td><a href="" data-value="{{@key}}"><i class="fa fa-pencil"></i></a></td>
+                    <td><a href="" data-toggle="modal" data-target="#group_update-add_modal"><i class="fa fa-pencil"></i></a></td>
                     <td>{{title}}</td>
                     <td class="col-md-7"><small>{{content}}</small></td>
                     <td><small>{{date}}</small></td>
@@ -855,7 +855,47 @@
     
     
     
-    
+          <div class="modal fade" id="group_update-add_modal" tabindex="-1" role="dialog" aria-labelledby="group_update-add_modal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add/Update Post</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Title</label>
+                    <input type="text" class="form-control" id="group_updates-title" value="{{groups.0.updates.sticky.0.title}}">
+                </div>
+                <div class="form-group">
+                    <label for="">Update Content</label>
+                    <textarea class="form-control" id="group_updates-content" rows="10">{{groups.0.updates.sticky.0.content}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Date</label>
+                    <input type="date" class="form-control" id="group_updates-date" value="{{groups.0.updates.sticky.0.date}}">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="group_updates-sticky" value="1" {{#is groups.0.updates.sticky.0.sticky 1 }}checked{{/is}}> Sticky at top of page
+                    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="group_updates-published" value="1"  {{#is groups.0.updates.sticky.0.published 1 }}checked{{/is}}> Published
+                    </label>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-lg btn-success group_updates--add"><i class="fa fa-save"></i> Save</button>
+                <button class="btn btn-lg btn-danger group_updates--delete"><i class="fa fa-trash"></i> Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
     
         
         
