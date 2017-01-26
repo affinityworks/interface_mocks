@@ -222,6 +222,41 @@ var data={
                 distance:"37"
             }
         ],
+        messages:[
+            {
+                message_id:1234,
+                date_created:"2017-01-01",
+                date_sent:"2017-01-02",
+                subject:"This is a very exciting update",
+                body:"Go to the meeting",
+                from_name:'Jame Doe',
+                from_email:"group@gmail.com",
+                status:"draft",
+                targeting:{
+                    tags:[
+                        "Nerd"
+                    ],
+                    activist_score:[
+                        "1",
+                        "4"
+                    ]
+                }
+            },
+            {
+                message_id:12344,
+                date_created:"2017-01-12",
+                date_sent:null,
+                subject:"Resist Trump stupid idea",
+                body:"Go to the meeting <br> like for real",
+                from_name:'Jame Doe',
+                from_email:"group@gmail.com",
+                status:"sent",
+                stats:{
+                    sent:27,
+                    open_rate:12
+                }
+            }            
+        ],
         events:[
             {
                 id:1234,

@@ -1,4 +1,8 @@
 
+function nl2br (str, is_xhtml) {   
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+}
 
 $(document).ready(function(){   
 
@@ -159,10 +163,24 @@ $(document).ready(function(){
         return false;
     });
 
+/* Message  */
 
+     $('#message-content').keyup(function(){
+        $('#message-preview-content').html(nl2br(this.value));
+    });
+     $('#message-subject').keyup(function(){
+        $('#message-preview-subject').html(nl2br(this.value));
+    });
+
+    $(".group_message-list_body").hide();
+    $( ".group_message-list_body--toggle").click(function() {
+        $(".group_message-list_body").toggle();
+        return false;
+    });
 
 
 });   
+
 
 
 

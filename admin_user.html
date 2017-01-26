@@ -57,6 +57,7 @@
         <li role="presentation" class="active group_nav-members"><a href="#group_pannel-members" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-users"></i> Members</a></li>
         <li role="presentation" class="group_nav-events"><a href="#group_pannel-events" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-calendar"></i> Events</a></li>
         
+ <li role="presentation" class="group_nav-messages"><a href="#group_pannel-messages" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-envelope"></i> Messages</a></li>
 
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-updates" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-desktop"></i> Group Webpage</a></li>
               
@@ -852,6 +853,138 @@
         
     </div>
     
+    <div role="tabpanel" class="tab-pane" id="group_pannel-messages">
+        
+        <h3><i class="fa fa-envelope"></i> Send an email message to members of your group</h3> 
+        <div class="pull-right">
+           
+           {{#is groups.0.messages.0.status 'draft'}}
+           
+            <button class="btn btn-lg btn-success"><i class="fa fa-save"></i> Save Message</button><br><br>
+            <button class="g-button btn btn-lg btn-warning"><i class="fa fa-paper-plane-o"></i> Send Test</button><br><br>
+            <button class="g-button btn btn-lg btn-info"><i class="fa fa-paper-plane-o"></i> Send Message </button>
+            
+            {{/is}}
+            
+        </div> 
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="">Subject</label>
+                        <input type="text" class="form-control message-content" id="message-subject" value="{{groups.0.messages.0.subject}}" />
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="">From Name</label>
+                        <input type="text" class="form-control message-content" id="message-name" value="{{groups.0.messages.0.from_name}}" />
+                    </div>  
+                    <div class="form-group col-md-4">
+                        <label for="">From Email</label>
+                        <input type="text" class="form-control message-content" id="message-email" value="{{groups.0.messages.0.from_email}}" />
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="">Message</label>
+                        <textarea class="form-control message-content" id="message-content" rows="4">{{groups.0.messages.0.body}}</textarea>
+                    </div> 
+                </div>
+
+            </div>
+        </div>
+            
+            
+            <ul class="nav nav-tabs" role="tablist" id="phone_bank-nav">
+                <li role="presentation" class="active"><a href="#group_message-preview" aria-controls="group_message-preview" role="tab" data-toggle="tab"><i class="fa fa-search"></i> Preview</a></li>
+                <li role="presentation" class="group_message-targeting_nav" ><a href="#group_message-targeting" aria-controls="group_message-targeting" role="tab" data-toggle="tab"><i class="fa fa-bullseye"></i> Targeting</a></li>
+                <li role="presentation" ><a href="#group_message-list" aria-controls="group_message-list" role="tab" data-toggle="tab"><i class="fa fa-list"></i> Message History</a></li>              
+            </ul>
+            
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="group_message-preview"> 
+                    <h4>Message Preview:</h4>
+                    <div class="well">
+                        <b>From:</b> {{admin_user.name}}<br>
+                        <b>Subject:</b> <span  id="message-preview-subject">{{groups.0.messages.0.subject}}</span><br>
+                        <b>Message</b>:<br>
+                        <br>This message was sent to you by {{admin_user.name}} because you joined the group : <a href="">{{groups.0.name}}</a>.<br>
+                        <hr>
+        
+                        <div class="message-preview-content" id="message-preview-content">{{groups.0.messages.0.body}}</div>
+                        
+                        <hr>
+                       To unsubscribe <a href="">click here</a>
+                        
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane " id="group_message-targeting"> 
+            
+                    <h4>Message Targeting:</h4>
+                    <div class="form-group">
+                        <label for="">Send only to member in the following tags</label>
+                        <select multiple class="form-control" id="">
+                            {{#each tags}}
+                            <option>{{name}}<!--{{#each ../groups.0.messages.0.targeting.tags}} {{this}} {{/each}}--></option>
+                            {{/each}}
+                        </select>
+                    </div> 
+                    <div class="form-group">
+                        <label for="">Events</label>
+                        <select multiple class="form-control" id="">
+                            {{#each groups.0.events}}
+                            <option>{{name}}</option>
+                            {{/each}}
+                        </select>
+                    </div> 
+                    <div class="form-group">
+                        <label for="">Activist Score</label>
+                        <select multiple class="form-control">
+                            <option>1 - RSVP Only</option>
+                            <option>2 - Attended Meeting</option>
+                            <option>3 - One time volunteer</option>
+                            <option>4 - Active volunteer</option>
+                            <option>5 - Super volunteer</option>
+                        </select>
+                    </div> 
+            
+                </div>
+
+                <div role="tabpanel" class="tab-pane " id="group_message-list"> 
+                    <h4>Message History</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Date Created</th>
+                                <th>Date Sent</th>
+                                <th>Subject</th>
+                                <th>Status</th>
+                                <th># Sent</th>
+                                <th>Open Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each groups.0.messages}}
+                            <tr>
+                                <td><a href="#" class="group_message-list_body--toggle"><i class="fa fa-binoculars"></i></a></td>
+                                <td>{{date_created}}</td>
+                                <td>{{date_sent}}</td>
+                                <td>{{subject}}<div class="group_message-list_body"><br>{{body}}</div></td>
+                                <td>{{status}}</td>
+                                <td>{{stats.sent}}</td>
+                                <td>{{#if stats.open_rate}}{{stats.open_rate}}%{{/if}}</td>                    
+                            </tr>
+                        </tbody>
+                        {{/each}}
+                    </table>     
+                </div>
+            </div>       
+        
+    </div>
+
     
     
     
