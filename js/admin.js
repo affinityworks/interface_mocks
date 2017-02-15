@@ -163,6 +163,13 @@ $(document).ready(function(){
         return false;
     });
 
+    $(".event_task_list").hide();
+    $( ".event_task_list-toggle").click(function() {
+        $(".event_task_list").toggle();
+        return false;
+    });
+
+
 /* Message  */
 
      $('#message-content').keyup(function(){

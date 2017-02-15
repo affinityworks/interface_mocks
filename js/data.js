@@ -284,6 +284,25 @@ var data={
                     attended_count:9,
                     not_attended_count:12
                 },
+                tasks:[
+	                {
+		                task_id:1233,
+		                name:"Make reminder calls",
+		                description:"Make remonder calls to all users that have RSVPed, make sure to not call after 8 pm",
+		                skills:[
+			                "admin",
+			                "office"
+		                ],
+		                due_date:'2017-03-03',
+		                status:"Needs Assignment",
+		                assigned_to:{
+			                user_id:1223232,
+			                first_name:"Jose",
+			                last_name:'X',
+			                email:"email@email.com"
+		                }
+	                }  
+                ],
                 users:
                     {
                         invited: [
@@ -396,6 +415,151 @@ var data={
         {
             id:5,
             name:"Phone Bank"
+        }
+    ],
+    skills:[
+        {
+            id:1,
+            name:"Graphic Design",
+            count:0
+        },
+        {
+            id:2,
+            name:"Trainer",
+            count:19
+        },
+        {
+            id:3,
+            name:"Police Liasion",
+            count:4
+        },
+        {
+            id:4,
+            name:"Facilitator",
+            count:2
+
+        },
+        {
+            id:5,
+            name:"Office",
+            count:20
+        },
+        {
+            id:5,
+            name:"Event Coordination",
+            count:5
+        },
+        {
+            id:5,
+            name:"Media",
+            count:2
+        },
+        {
+            id:5,
+            name:"Data",
+            count:0
+            
+        },
+        {
+            id:5,
+            name:"Social Media",
+            count:0
+        }
+    ],
+    interests:[
+        {
+            id:1,
+            name:"Canvass",
+            count:12
+
+        },
+        {
+            id:2,
+            name:"media",
+            count:2
+        },
+        {
+            id:3,
+            name:"office",
+            count:20
+        },
+        {
+            id:4,
+            name:"admin",
+            count:3
+        },
+        {
+            id:5,
+            name:"Phone Bank",
+            count:30
+        }
+    ],
+
+    project_templates:[
+        {
+            id:1,
+            name:"Organzining Meeting",
+            events:[
+	            {
+		            name: "Organzing Meeting"
+	            }
+            ],
+            messages:[
+	            {
+		            name: "Meeting Invite"
+	            },
+	            {
+		            name: "Meeting Reminder"
+	            },
+	            {
+		            name: "New Member Welcome"
+	            }
+            ],
+            tasks:[
+	            {
+			         name:"Books Sapce"	,	        
+					 description:"Confirm location of the meeting space ",
+					 due_date:-7,
+					 skills:"organizer, admin"
+	            },
+	            {
+			         name:"Invite Participants",        
+					 description:"Send email blast with link to event to all of the participants that you want to attend.",
+					 due_date:-7,
+					 skills:"organizer"
+	            },
+	            {
+			         name:"Reminder Calls",		        
+					 description:"Call all participants that have not RSVPed",
+					 due_date:-2,
+					 skills:"organizer"
+	            },
+	            {
+			         name:"Sign In Table",		        
+					 description:"Staff the sign in table",
+					 due_date:0,
+					 skills:""
+	            },
+	            {
+			         name:"Faciliatate Meetings",		        
+					 description:"Prepeare the agneda, run the meeting",
+					 due_date:0,
+					 skills:"facilitator"
+	            },
+	            {
+			         name:"Data Enter the Sign In Sheet",		        
+					 description:"",
+					 due_date:2,
+					 skills:"office"
+	            },
+	            {
+			         name:"Send weelcome email to new members",	        
+					 description:"For all new memebers that joined for the first time at the meeeting send them a welcome email and ask them to fill out the volunter form",
+					 due_date:2,
+					 skills:"office"
+	            },	            
+            ],
+	        
         }
     ],
     admin_user:{

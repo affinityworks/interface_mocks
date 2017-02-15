@@ -60,7 +60,12 @@
  <li role="presentation" class="group_nav-messages"><a href="#group_pannel-messages" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-envelope"></i> Messages</a></li>
 
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-updates" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-desktop"></i> Group Webpage</a></li>
+
+        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-tasks" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-check-square"></i> Projects and Tasks</a></li>
               
+        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-settings" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Settings</a></li>
+              
+
 
     </ul>
 
@@ -84,6 +89,7 @@
         <select class="forn-control group-member-search_criteria" name="search">
             <option value="">Select Search Criteria</option>
             <option value="tag">Tag</option>
+            <option value="list">List</option>
             <option value="geo">Location</option>
             <option value="event">Events</option>
             <option value="activist_score">Activist Score</option>
@@ -582,6 +588,8 @@
                     <th>RSVPs</th>
                     <th>Atended</th>
                     <th></th>
+                    <th></th>
+
 
                 </tr>
             </thead>
@@ -595,11 +603,118 @@
                     <td>{{stats.rsvp_count}}</a></td>
                     <td>{{stats.attended_count}}</td>
                     <td><a href="" class="event_list-toggle"> <i class="fa fa-users"></i> View Participant List</a></td>
+                    <td><a href="" class="event_task_list-toggle"> <i class="fa fa-calendar-check-o"></i> Manage Tasks</a></td>
+
                 </tr>
                 {{/each}}
             </tbody>
         </table>    
-        
+
+        <div class="event_task_list">
+            <br><h3>Event Tasks</h3><br>
+			<div class="pull-right"><a href="" data-toggle="modal" data-target="#task_add-modal"><i class="fa fa-plus"></i> Add Task</a></div>
+  
+           
+			<div class="row">
+				<div class="col-md-3">
+		            <label>mark tasks as:</label> 
+		            <button class="btn btn-sm btn-success" data-value="rsvp">Completed</button>
+		            <button class="btn btn-sm btn-danger" data-value="decline">Deleted</button>
+				</div>
+				<div class="col-md-3">
+		            <label>actions:</label>
+		            <button class="btn btn-sm btn-info" data-value="attened">Assign Tasks</button>
+		            <button class="btn btn-sm btn-primary" data-value="not_attened">Rate Tasks</button>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="well">
+					<h4>Rate Tasks</h4>
+					<select>
+						<option>Select Task Score</option>
+						
+					</select>
+					<label>Task Rating Note</label>
+					<textarea></textarea>
+					<button class="btn btn-sm btn-info">Save</button>
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				<div class="well">
+					<h4>User Search</h4>
+					<form class="form-inline">
+						
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search User">
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Skills">
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Intrests">
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Tags">
+						 <button class="btn btn-info">Search Users</button>
+						
+					</form>
+
+		            <table class="table table-striped">
+			            <thead>
+			                <tr>
+			                    <th></th>
+			                    <th>Name</th>
+			                    <th>Phone</th>
+			                    <th>Skills</th>
+			                    <th>Interests</th>
+			                    <th>Tags</th>
+
+			                </tr>
+			            </thead>
+			            <tbody>
+		
+			            	<tr>
+			                	<td><button class="btn btn-sm btn-primary">Assign Task</button> 
+				                	<button class="btn btn-sm btn-info">Send Request</button>
+			                	</td>
+								<td>Name</td>
+								<td>510-435-8920</td>
+								<td>Office</td>
+								<td>Office</td>
+								<td>Trainer</td>
+
+			            	</tr>
+			            </tbody>
+		            </table>					
+					
+				</div>
+			</div>
+			
+            <table class="table table-striped">
+	            <thead>
+	                <tr>
+	                    <th></th>
+	                    <th>Task</th>
+	                    <th>Due</th>
+	                    <th>Assigned To</th>
+	                    <th>Status</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+
+                   {{#each groups.0.events.[0].tasks}}
+	            	<tr>
+	                	<td><input type="checkbox"></td>
+	                	<td><a href="#" class="event_tast_detail-toggle">{{name}}</a></td>
+	                	<td>{{due_date}}</td>
+	                	<td><a href="#" class="user_detail-toggle">{{user.first_name}}</a></td>
+	                	<td>{{status}}</td>
+	            	</tr>
+	            	{{/each}}
+	            </tbody>
+            </table>
+		
+
+
+        </div>        
         <div class="event_list">
             
                 <br><h3>Event Participants</h3><br>
@@ -720,8 +835,190 @@
                             
         </div>
     </div>
+
+    <div role="tabpanel" class="tab-pane" id="group_pannel-settings">
+
+        <h3><i class="fa fa-tags"></i> Tags</h3>
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#tag_add-modal"><i class="fa fa-plus"></i> Add New Tag</a></div>
+  
+  
+  
+          <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>User Count</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each tags}}
+                <tr>
+	                <td>{{name}}</td>
+	                <td>{{count}}</td>
+	                <td>edit</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>      
+        
+<br><br>
+        
+        
+ <div class="row">
+	 <div class="col-md-6">       
+        <h3><i class="fa fa-star"></i> Skills</h3>
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#skill_add-modal"><i class="fa fa-plus"></i> Add New Skill</a></div>
+
+        <p>Skills are skills that a volunteer has that has been determined by an organizer and cannot be updated by the volunteer.  This allows organizers to track if someone actually has a skill to complete a task and can rate their skill level at performing tasks that require the skills. </p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>User Count</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each skills}}
+                <tr>
+	                <td>{{name}}</td>
+	                <td>{{count}}</td>
+	                <td></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+	 </div>
+	 <div class="col-md-6">       
+
+        <h3><i class="fa fa-bell"></i> Interests</h3>
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#interest_add-modal"><i class="fa fa-plus"></i> Add New Interest</a></div>
+
+        <p>Interests are activities that volunteers are interested in performing.  These can be updating and managed by the volunteer but need to be created by the organizer.  You should search interests when you are looking for volunteers to assign to tasks </p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>User Count</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each interests}}
+                <tr>
+	                <td><a href="#"><i class="fa fa-pencil"></i> {{name}}</a></td>
+	                <td>{{count}}</td>
+	                <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        
+	 </div>
+ </div>
+
+<br><br>
+        <h3><i class="fa fa-book"></i> Project Templates</h3>
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#project_add-modal"><i class="fa fa-plus"></i> Add New Template	</a></div>
+
+<h4>Events</h4>
+<h4>Messages</h4>
+<h4>Tasks</h4>
+
+
+<br><br>
+        <h3><i class="fa fa-book"></i> Message Templates</h3>
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#project_add-modal"><i class="fa fa-plus"></i> Add New Template	</a></div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Notes</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+	                <td></td>
+	                <td></td>
+	                <td></td>
+	                <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
     
-    
+    <div role="tabpanel" class="tab-pane" id="group_pannel-tasks">
+        <h3><i class="fa fa-check-square"></i> Tasks</h3>
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#task_add-modal"><i class="fa fa-plus"></i> Add New Task</a></div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Task</th>
+                    <th>Event</th>
+                    <th>Project</th>
+                    <th>Assigned To</th>
+
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th></th>
+					<th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+	                <td><input type="checkbox"></td>
+	                <td><a href="#" >Reminder Calls</a></td>
+
+	                <td>NVDA Training: 3/4</td>
+	                <td>Mass Training</td>
+
+	                <td>David Taylor <i class="fa fa-user-times" title="Reassign User"></i></td>
+
+
+	                <td>2017-12-01</td>
+	                <td>Assigned</td>
+
+
+	                <td>		           
+		                <button class="btn btn-xs btn-success"><i class="fa fa-check"></i> Completed</button>
+
+					</td>
+	                <td>
+		                <button class="btn btn-xs btn-info"><i class="fa fa-envelope"></i> Send Assignment</button><br>
+		                <button class="btn btn-xs btn-info"><i class="fa fa-envelope"></i> Send Reminder</button>
+		                
+	                </td>		
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+<br><br>
+        <h3><i class="fa fa-folder-open"></i> Projects</h3>
+        
+		<div class="pull-right"><a href="" data-toggle="modal" data-target="#project_add-modal"><i class="fa fa-plus"></i> Add New Project</a></div>
+		<p>Projects are a collection of the events, tasks and messages grouped together to help you organize. </p> 
+
+
+
+                
+
+    </div>
     
     <div role="tabpanel" class="tab-pane" id="group_pannel-updates">
         <h3><i class="fa fa-desktop"></i> Website Updates</h3>
@@ -1029,6 +1326,25 @@
           </div>
         </div>
   
+
+
+        
+        <div class="modal fade" id="task_add-modal" tabindex="-1" role="dialog" aria-labelledby="task_add-modal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" >Add / Edit Task</h4>
+              </div>
+              <div class="modal-body">
+	              
+	              
+	              
+	              
+              </div>
+            </div>
+          </div>
+        </div>
     
         
         
