@@ -185,6 +185,20 @@ $(document).ready(function(){
         return false;
     });
 
+// TASKS
+
+    $(".task_rating").hide();
+    $( ".task_rating--toggle").click(function() {
+        $(".task_rating").toggle();
+        return false;
+    });
+
+    $(".task_assign").hide();
+    $( ".task_assign--toggle").click(function() {
+        $(".task_assign").toggle();
+        return false;
+    });
+
 
 });   
 

@@ -133,6 +133,40 @@ var data={
                         status:"rsvp"
                     }
                 ],
+                tasks:[
+				    {
+				        task_id:1233,
+				        name:"Make reminder calls",
+				        description:"Make reminder calls to all users that have RSVPed, make sure to not call after 8 pm",
+				        start_time:'',
+				        end_time:'',
+				        due_date:'2017-03-03',
+				        assigned_date:'2017-03-01',
+				        completed_date:'',
+				        status:"Assigned",
+						notes:'I did my best but may have messed something up',
+						event:{
+							id:211221,
+							name:'NVDA Training',
+							date:'2017-03-04'
+						},
+						project:{
+							id:3343,
+							name:"General Strike"
+						},
+						assigned_to:{
+			                user_id:1223232,
+			                first_name:"Jose",
+			                last_name:'X',
+			                email:"email@email.com"
+		                },
+	                	review:{
+							score:2,
+							notes:'They did a good job',
+							review_by:'Jaun Organizer'
+						}
+				    }       
+                ],
                 activities:[
                     {
                         id:"",
@@ -347,7 +381,80 @@ var data={
                 
 
             }
-        ]
+        ],
+		tasks:[
+		    {
+		        task_id:1233,
+		        name:"Make reminder calls",
+		        description:"Make reminder calls to all users that have RSVPed, make sure to not call after 8 pm",
+		        start_time:'',
+		        end_time:'',
+		        due_date:'2017-03-03',
+		        assigned_date:'2017-03-01',
+		        completed_date:'',
+		        status:"Assigned",
+				notes:'I did my best but may have messed something up',
+				event:{
+					id:211221,
+					name:'NVDA Training',
+					date:'2017-03-04'
+				},
+				project:{
+					id:3343,
+					name:"General Strike"
+				},
+				assigned_to:{
+	                user_id:1223232,
+	                first_name:"Jose",
+	                last_name:'X',
+	                email:"email@email.com"
+                },
+            	review:{
+					score:2,
+					notes:'They did a good job',
+					review_by:'Jaun Organizer'
+				}
+		    },
+		    {
+		        task_id:1233,
+		        name:"Sign in members at weekly meeting",
+		        description:"Arrrive at the meeting 20 minutes early and get all attendeees to sign in",
+		        skills:[
+		            "admin",
+		            "office"
+		        ],
+		        due_date:'2017-03-18',
+		        status:"Needs Assignment",
+		        event:{
+			        id:2323,
+			        name:'Weekly meeting',
+			        date:'2017-04-10',
+			        url:''
+		        },
+		        assigned_to:{
+		            user_id:1223232,
+		            first_name:"Jose",
+		            last_name:'X',
+		            email:"email@email.com"
+		        }
+		    },  
+		    {
+		        task_id:1233,
+		        name:"Data entry",
+		        description:"Transcribe the member signin sheets into our database",
+		        skills:[
+		            "admin",
+		            "office"
+		        ],
+		        due_date:'2017-03-18',
+		        status:"Needs Assignment",
+		        assigned_to:{
+		            user_id:1223232,
+		            first_name:"Jose",
+		            last_name:'X',
+		            email:"email@email.com"
+		        }
+		    }		]
     },
     {
         id:2,
@@ -469,29 +576,43 @@ var data={
     interests:[
         {
             id:1,
-            name:"Canvass",
-            count:12
-
+            name:"canvass",
+            description:"I will knock on doors",
+            order:0,
+            display:1,
+            stats:{
+	            count:12
+			},
         },
         {
             id:2,
             name:"media",
-            count:2
+            description:"I can contact the media",
+            order:0,
+            display:1,
+            stats:{
+	            count:12
+			}
         },
         {
             id:3,
             name:"office",
-            count:20
-        },
-        {
-            id:4,
-            name:"admin",
-            count:3
+            description:"I can hep with office tasks",
+            order:0,
+            display:1,
+            stats:{
+	            count:12
+			}
         },
         {
             id:5,
             name:"Phone Bank",
-            count:30
+            description:"I can call volunteers or voters",
+            order:0,
+            display:1,
+            stats:{
+	            count:12
+			}                      
         }
     ],
 
@@ -585,5 +706,106 @@ var data={
                 region:"CA"
             }        
         ]
-    }
+    },
+    campaign_tempaltes:[
+	   {
+		 name:"Tax Day Actions",
+		 organization:{
+			 name:"The Other 98",
+			 website:'https://other98.com/',
+			 facebook:'https://www.facebook.com/TheOther98/',
+			 twiter:'other98',
+			 logo_url:'http://o98test.agitpopcommunica.netdna-cdn.com/wp-content/uploads/2015/02/o98-logo-1-e1423384071750.png'
+			},
+		 contact:{
+			 name:'',
+			 email:'',
+			 phone:''
+		 },
+		 campaign:{
+			 goal:"To make some kind of change",
+			 tactics:"Protests at some places on tax day",
+			 expectations:"You will organize an action with you local ",
+			 support:"We will have coordination conference calls and a campaign organinzer who you can talk to for tips.  Once you ha",
+			 time_commitment:'',
+			 date:2017-01-15,
+			 logo:"",
+			 url:'',		 
+			 reqierments:{
+				 approval:false,
+				 question1:"",
+				 question2:"",
+				 question2:""
+			 }			 
+		 },
+		 stats:{
+			acticvites:{
+				local_groups:23,
+				confirmed_events: 12,
+				tasks:234
+			},
+			template:{
+				events:3,
+				tasks:12,
+				messages:3
+			}
+		 },
+		 applications:[
+			{
+				group_name:'',
+				group_stats:{
+					emails:200,
+					volunteers:5,
+					events:3
+				},
+				group_contact:{
+					first_name:'',
+					last_name:'',
+					email:'',
+					phonne:''
+				},
+				location:{
+					city:'',
+					state:'',
+					zip:'',
+					latitude:'',
+					longitude:''
+				},
+				application:{
+					question1:'',
+					question2:'',
+					question23:'',
+				}
+			}	 
+		 ],
+		 groups:[
+			 {
+				group_name:'Oakland Resist',
+				group_contact:{
+					first_name:'First',
+					last_name:'Last',
+					email:'',
+					phone:''
+				},
+				location:{
+					city:'Oakland',
+					state:'CA',
+					zip:'94602',
+					latitude:'',
+					longitude:''
+				},
+				project_status:{
+					tasks_assgined:12,
+					tasks_completed:3,
+					tasks_overdue:1,
+					event_rsvp_count:304,
+					event_url:'',
+					facebook_event_url:''
+				}			 
+			 }
+			 
+		 ]
+    
+	    }
+    ]
 }

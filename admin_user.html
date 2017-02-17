@@ -61,7 +61,9 @@
 
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-updates" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-desktop"></i> Group Webpage</a></li>
 
-        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-tasks" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-check-square"></i> Projects and Tasks</a></li>
+        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-tasks" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-check-square"></i> Tasks</a></li>
+
+        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-projects" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-folder-open"></i> Projects</a></li>
               
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-settings" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Settings</a></li>
               
@@ -615,79 +617,6 @@
 			<div class="pull-right"><a href="" data-toggle="modal" data-target="#task_add-modal"><i class="fa fa-plus"></i> Add Task</a></div>
   
            
-			<div class="row">
-				<div class="col-md-3">
-		            <label>mark tasks as:</label> 
-		            <button class="btn btn-sm btn-success" data-value="rsvp">Completed</button>
-		            <button class="btn btn-sm btn-danger" data-value="decline">Deleted</button>
-				</div>
-				<div class="col-md-3">
-		            <label>actions:</label>
-		            <button class="btn btn-sm btn-info" data-value="attened">Assign Tasks</button>
-		            <button class="btn btn-sm btn-primary" data-value="not_attened">Rate Tasks</button>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="well">
-					<h4>Rate Tasks</h4>
-					<select>
-						<option>Select Task Score</option>
-						
-					</select>
-					<label>Task Rating Note</label>
-					<textarea></textarea>
-					<button class="btn btn-sm btn-info">Save</button>
-				</div>
-			</div>
-
-
-
-			<div class="row">
-				<div class="well">
-					<h4>User Search</h4>
-					<form class="form-inline">
-						
-						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search User">
-						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Skills">
-						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Intrests">
-						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Tags">
-						 <button class="btn btn-info">Search Users</button>
-						
-					</form>
-
-		            <table class="table table-striped">
-			            <thead>
-			                <tr>
-			                    <th></th>
-			                    <th>Name</th>
-			                    <th>Phone</th>
-			                    <th>Skills</th>
-			                    <th>Interests</th>
-			                    <th>Tags</th>
-
-			                </tr>
-			            </thead>
-			            <tbody>
-		
-			            	<tr>
-			                	<td><button class="btn btn-sm btn-primary">Assign Task</button> 
-				                	<button class="btn btn-sm btn-info">Send Request</button>
-			                	</td>
-								<td>Name</td>
-								<td>510-435-8920</td>
-								<td>Office</td>
-								<td>Office</td>
-								<td>Trainer</td>
-
-			            	</tr>
-			            </tbody>
-		            </table>					
-					
-				</div>
-			</div>
-			
             <table class="table table-striped">
 	            <thead>
 	                <tr>
@@ -867,8 +796,9 @@
         
  <div class="row">
 	 <div class="col-md-6">       
-        <h3><i class="fa fa-star"></i> Skills</h3>
 		<div class="pull-right"><a href="" data-toggle="modal" data-target="#skill_add-modal"><i class="fa fa-plus"></i> Add New Skill</a></div>
+
+        <h3><i class="fa fa-star"></i> Skills</h3>
 
         <p>Skills are skills that a volunteer has that has been determined by an organizer and cannot be updated by the volunteer.  This allows organizers to track if someone actually has a skill to complete a task and can rate their skill level at performing tasks that require the skills. </p>
 
@@ -894,8 +824,9 @@
 	 </div>
 	 <div class="col-md-6">       
 
-        <h3><i class="fa fa-bell"></i> Interests</h3>
 		<div class="pull-right"><a href="" data-toggle="modal" data-target="#interest_add-modal"><i class="fa fa-plus"></i> Add New Interest</a></div>
+
+        <h3><i class="fa fa-bell"></i> Interests</h3>
 
         <p>Interests are activities that volunteers are interested in performing.  These can be updating and managed by the volunteer but need to be created by the organizer.  You should search interests when you are looking for volunteers to assign to tasks </p>
 
@@ -959,7 +890,101 @@
     
     <div role="tabpanel" class="tab-pane" id="group_pannel-tasks">
         <h3><i class="fa fa-check-square"></i> Tasks</h3>
-		<div class="pull-right"><a href="" data-toggle="modal" data-target="#task_add-modal"><i class="fa fa-plus"></i> Add New Task</a></div>
+        <br>
+        		<div class="pull-right"><a href="" data-toggle="modal" data-target="#task_add-modal"><i class="fa fa-plus"></i> Add New Task</a></div>
+
+        
+       <ul class="nav nav-tabs" role="tablist" id="translate_row-nav_en">
+
+        <li role="presentation" class="active "><a href="#task_pannel-assigned" role="tab" data-toggle="tab"><i class="fa fa-user-circle"></i> Assigned</a></li>
+        <li role="presentation" class=""><a href="#task_pannel-needs_assignment" role="tab" data-toggle="tab"><i class="fa fa-user-times"></i> Needs Assignment</a></li>
+        <li role="presentation" class=""><a href="#task_pannel-completed"  role="tab" data-toggle="tab"><i class="fa fa-check-circle"></i> Completed</a></li>
+        <li role="presentation" class=""><a href="#task_pannel-all" role="tab" data-toggle="tab"><i class="fa fa-list"></i> All</a></li>
+
+
+    </ul>     
+<br>
+        
+			<div class="row">
+				<div class="col-md-5">
+		            <label>mark selected tasks as:</label> 
+		            <button class="btn btn-sm btn-success" >Completed</button>
+		            <button class="btn btn-sm btn-warning" >Needs Assignment</button>
+
+		            <button class="btn btn-sm btn-danger" >Deleted</button>
+				</div>
+				<div class="col-md-3">
+		            <label>actions:</label>
+		           <a href="" class="task_assign--toggle"><button class="btn btn-sm btn-info" data-value="attened">Assign Tasks</button></a>
+		            <a href="" class="task_rating--toggle"><button class="btn btn-sm btn-primary" data-value="not_attened">Rate Tasks</button></a>
+				</div>
+			</div>
+
+			<div class="row task_rating">
+				<br>
+				<div class="well">
+					<h4>Rate Tasks</h4>
+					<select>
+						<option>Select Task Score</option>
+						<option>Excelent</option>
+						<option>Okay</option>
+						<option>Poor</option>
+						<option>Did not complete</option>
+					</select>
+					<label>Task Rating Note</label>
+					<textarea></textarea>
+					<button class="btn btn-sm btn-info">Save</button>
+				</div>
+			</div>
+
+<br>
+
+			<div class="row task_assign">
+				<br>
+				<div class="well">
+					<h4>User Search</h4>
+					<form class="form-inline">
+						
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search User">
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Skills">
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Intrests">
+						 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"  placeholder="Search Tags">
+						 <button class="btn btn-info">Search Users</button>
+						
+					</form>
+					<br>
+					<h4>Results</h4>
+		            <table class="table table-striped">
+			            <thead>
+			                <tr>
+			                    <th></th>
+			                    <th>Name</th>
+			                    <th>Phone</th>
+			                    <th>Skills</th>
+			                    <th>Interests</th>
+			                    <th>Tags</th>
+
+			                </tr>
+			            </thead>
+			            <tbody>
+		
+			            	<tr>
+			                	<td><button class="btn btn-sm btn-primary">Assign Task</button> 
+				                	<button class="btn btn-sm btn-info">Send Request</button>
+			                	</td>
+								<td>Name</td>
+								<td>510-435-8920</td>
+								<td>Office</td>
+								<td>Office</td>
+								<td>Trainer</td>
+
+			            	</tr>
+			            </tbody>
+		            </table>					
+					
+				</div>
+			</div>
+			
 
         <table class="table table-striped">
             <thead>
@@ -969,46 +994,48 @@
                     <th>Event</th>
                     <th>Project</th>
                     <th>Assigned To</th>
+                    <th>Assigned Date</th>
+
 
                     <th>Due Date</th>
                     <th>Status</th>
-                    <th></th>
 					<th></th>
 
                 </tr>
             </thead>
             <tbody>
+	            {{#each groups.0.tasks}}
                 <tr>
 	                <td><input type="checkbox"></td>
-	                <td><a href="#" >Reminder Calls</a></td>
+	                <td><a href="#" >{{name}}</a></td>
 
-	                <td>NVDA Training: 3/4</td>
-	                <td>Mass Training</td>
+	                <td>{{event.name}}<br>{{event.date}}</td>
+	                <td>{{project.name}}</td>
 
-	                <td>David Taylor <i class="fa fa-user-times" title="Reassign User"></i></td>
+	                <td>{{assigned_to.first_name}} {{assigned_to.last_name}} <i class="fa fa-user-times" title="Reassign User"></i></td>
+
+	                <td>{{assigned_date}}</td>
+
+	                <td>{{due_date}}</td>
+	                <td>{{status}}</td>
 
 
-	                <td>2017-12-01</td>
-	                <td>Assigned</td>
-
-
-	                <td>		           
-		                <button class="btn btn-xs btn-success"><i class="fa fa-check"></i> Completed</button>
-
-					</td>
 	                <td>
 		                <button class="btn btn-xs btn-info"><i class="fa fa-envelope"></i> Send Assignment</button><br>
 		                <button class="btn btn-xs btn-info"><i class="fa fa-envelope"></i> Send Reminder</button>
 		                
 	                </td>		
                 </tr>
-
+				{{/each}}
 
             </tbody>
         </table>
+    </div>
+    
+     <div role="tabpanel" class="tab-pane" id="group_pannel-projects">
 
 
-<br><br>
+
         <h3><i class="fa fa-folder-open"></i> Projects</h3>
         
 		<div class="pull-right"><a href="" data-toggle="modal" data-target="#project_add-modal"><i class="fa fa-plus"></i> Add New Project</a></div>
@@ -1338,9 +1365,93 @@
               </div>
               <div class="modal-body">
 	              
+	              <br>
 	              
 	              
-	              
+	                <div class="row">
+                        <div class="form-group col-md-5">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" id="" value="{{name}}">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">Status</label>
+                            <select class="form-control">
+                                <option>Assigned</option>
+                                <option selected>Needs Assignment</option>
+                                <option>Completed</option>
+                                <option>Archived</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Assigned To</label>
+                            <input type="text" class="form-control" id="" value="{{name}}" placeholder="Select person..">
+                        </div>                   
+                    </div>
+                    <div class="row">
+	                     <div class="form-group col-md-6">
+	                        <label for="">Description</label>
+	                        <textarea  class="form-control" id=""rows=3 >{{description}}</textarea>
+	                    </div>
+	                     <div class="form-group col-md-6">
+	                        <label for="">Insturctions</label>
+	                        <textarea  class="form-control" id=""rows=3 >{{description}}</textarea>
+	                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <label for="">Due Date</label>
+                            <input type="date" class="form-control" id="" value="{{date}}">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">Shift Start Time</label>
+                            <input type="datetime" class="form-control" id="" value="{{start_time}}">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="">Shift End Time</label>
+                            <input type="datetime" class="form-control" id="" value="{{start_time}}">
+                        </div>
+                                                        
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="">Suggested  Interests</label>
+                            <select multiple class="form-control">
+	                            {{#each interests}}
+	                            <option>{{name}}</option>
+	                            
+	                            {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Required Skills</label>
+                            <select multiple class="form-control">
+	                            {{#each skills}}
+	                            <option>{{name}}</option>
+	                            
+	                            {{/each}}
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="">Related Event</label>
+                            <input type="text" class="form-control" id="" value="{{name}}" placeholder="Select event..">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Related Project</label>
+                            <input type="text" class="form-control" id="" value="{{name}}" placeholder="Select project..">
+                        </div>
+
+                    </div>
+                    
+
+                    
+	              <div class="pull-right"><button class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button></div>
+	              <br><br>
               </div>
             </div>
           </div>
