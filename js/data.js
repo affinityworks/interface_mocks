@@ -382,6 +382,41 @@ var data={
 
             }
         ],
+		projects:[
+			{
+				id:23423,
+				name:'Oakland General Strike',
+				date:'2017-04-03',
+				stats:{
+					events:1,
+					messages:2,
+					tasks:8,
+					tasks_completed:3	
+				},
+				campaign:{
+					name:'Gneral Strike',
+					organization:'Other 98'
+				},
+				events:[
+					{
+						id:45534,
+						name:'Protest'
+					}
+				],
+				tasks:[
+					{
+						id:45534,
+						name:'Phone Bank'
+					}
+				],
+				messages:[
+					{
+						id:45534,
+						name:'Turnout Email'
+					}
+				]
+			}	
+		],
 		tasks:[
 		    {
 		        task_id:1233,

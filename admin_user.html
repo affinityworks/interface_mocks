@@ -64,6 +64,8 @@
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-tasks" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-check-square"></i> Tasks</a></li>
 
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-projects" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-folder-open"></i> Projects</a></li>
+
+        <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-campaigns" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-bullhorn"></i> Find a Project</a></li>
               
         <li role="presentation" class="group_nav-updates" ><a href="#group_pannel-settings" aria-controls="groups_pannel-" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Settings</a></li>
               
@@ -1031,6 +1033,72 @@
             </tbody>
         </table>
     </div>
+
+     <div role="tabpanel" class="tab-pane" id="group_pannel-campaigns">
+
+        <h3><i class="fa fa-bullhorn"></i> Find a Camapign</h3>
+
+<div class="row">
+
+
+<div class="col-md-3">
+
+<strong>Search</strong>
+
+<select multiple class="form-control " id="">
+	<option>Congressional</option>
+	<option>Voter Registration</option>
+	<option>Immigration</option>
+</select>
+
+</div>
+</div>
+
+<h3>Campaigns</h3>
+
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+					<th>Organization</th>
+					<th>Goal</th>
+					<th>Expectations</th>
+					<th>Support</th>
+
+					<th>Tactics</th>
+					<th>Date</th>
+					<th>Groups Participating</th>
+					<th>Events</th>
+					<th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each campaign_tempaltes}}
+				<tr>
+					<td><a href="" class="project_details--toggle">{{name}}</a></td>
+					<td>{{organization.name}}</td>
+					<td>{{campaign.goal}}</td>
+					<td>{{campaign.tactics}}</td>
+					<td>{{campaign.expectations}}</td>
+					<td>{{campaign.support}}</td>
+
+					<td>{{campaign.date}}</td>
+					<td>{{stats.acticvites.local_groups}}</td>
+					<td>{{stats.acticvites.confirmed_events}}</td>
+					<td>
+						<button class="btn btn-primary">Join Campaign</button><br>
+						<button class="btn btn-info">View Project Template</button>
+						
+					</td>
+				</tr>
+				{{/each}}
+            </tbody>
+   </table>
+
+
+     </div>
+
     
      <div role="tabpanel" class="tab-pane" id="group_pannel-projects">
 
@@ -1041,8 +1109,33 @@
 		<div class="pull-right"><a href="" data-toggle="modal" data-target="#project_add-modal"><i class="fa fa-plus"></i> Add New Project</a></div>
 		<p>Projects are a collection of the events, tasks and messages grouped together to help you organize. </p> 
 
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Project Date</th>
+                    <th>Campaign</th>
+                    <th>Tasks</th>
+                    <th>Tasks Completed</th>
+                    <th>Events</th>
+                    <th>Messages</th>
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each groups.0.projects}}
+				<tr>
+					<td><a href="" class="project_details--toggle">{{name}}</a></td>
+					<td>{{date}}</td>
+					<td>{{campaign.name}}</td>
+					<td>{{stats.tasks}}</td>
+					<td>{{stats.tasks_completed}}</td>
+					<td>{{stats.events}}</td>
+					<td>{{stats.messages}}</td>
 
-
+				</tr>
+				{{/each}}
+            </tbody>
+   </table>
                 
 
     </div>
