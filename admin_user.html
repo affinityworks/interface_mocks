@@ -1124,7 +1124,7 @@
             <tbody>
 	            {{#each groups.0.projects}}
 				<tr>
-					<td><a href="" class="project_details--toggle">{{name}}</a></td>
+					<td><a href="" class="project_detail--toggle">{{name}}</a></td>
 					<td>{{date}}</td>
 					<td>{{campaign.name}}</td>
 					<td>{{stats.tasks}}</td>
@@ -1136,6 +1136,82 @@
 				{{/each}}
             </tbody>
    </table>
+     
+ <div class="project_detail">
+<h3>{{project_templates.0.name}}</h3>
+<h4>Tasks</h4>
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Due Date</th>
+                    <th>Assigned To </th>
+
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each project_templates.0.tasks}}
+				<tr>
+					<td><a href="" class="task_detail--toggle">{{name}}</a></td>
+					<td>{{description}}</td>
+					<td>{{status}}</td>
+					<td>{{due_date}}</td>
+					<td></td>
+				</tr>
+				{{/each}}
+            </tbody>
+   </table>
+
+<h4>Events</h4>
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+  
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each project_templates.0.events}}
+				<tr>
+					<td><a href="" class="project_details--toggle">{{name}}</a></td>
+					<td>{{date}}</td>
+					<td>{{status}}</td>
+					<td><a href="{{url}}" target="blank">URL</a></td>
+
+				</tr>
+				{{/each}}
+            </tbody>
+   </table>
+
+
+<h4>Messages</h4>
+   <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+  
+                </tr>
+            </thead>
+            <tbody>
+	            {{#each project_templates.0.messages}}
+				<tr>
+					<td><a href="" class="project_details--toggle">{{name}}</a></td>
+					<td>{{subject}}</td>
+					<td>{{status}}</td>
+
+				</tr>
+				{{/each}}
+            </tbody>
+   </table>
+
+ </div>    
                 
 
     </div>

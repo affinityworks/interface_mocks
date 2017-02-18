@@ -198,6 +198,13 @@ $(document).ready(function(){
         $(".task_assign").toggle();
         return false;
     });
+// PROJECTS
+
+    $(".project_detail").hide();
+    $( ".project_detail--toggle").click(function() {
+        $(".project_detail").toggle();
+        return false;
+    });
 
 
 });   
