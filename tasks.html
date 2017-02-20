@@ -1,0 +1,212 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/js/bootcards.min.js"></script>
+    
+    
+    <script type="text/javascript" src="vendor/swag/lib/swag.js"></script> 
+
+    <script type="text/javascript" src="js/data.js"></script> 
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/css/bootcards-desktop.min.css">
+
+    <link href="css/user.css" rel="stylesheet"> 
+    
+<script>
+
+$(document).ready(function(){   
+        
+    var template = Handlebars.compile($("#groups-tasks-template").html());
+    $("#content").append(template(data.groups[0]));
+
+
+});
+</script>
+</head>
+
+<body>
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <button type="button" class="btn btn-default btn-back navbar-left pull-left hidden" onclick="history.back()">
+        <i class="fa fa-lg fa-chevron-left"></i>
+        <span>Back</span>
+      </button>
+      <!-- menu button to show/ hide the off canvas menu -->
+      <button type="button" class="btn btn-default btn-menu navbar-left pull-left" data-toggle="offcanvas">
+        <i class="fa fa-lg fa-bars"></i><span>Menu</span>
+      </button>
+
+      <a class="navbar-brand" title="Bootcards Starter" href="/">Affinity</a>  
+
+      <!--right aligned button-->
+
+
+      <!--navbar menu options: shown on desktop only -->
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#">
+              <i class="fa fa-check"></i> Tasks 
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-list-alt"></i> Projects
+            </a>
+          </li>
+          <li class="">
+            <a href="#">
+              <i class="fa fa-users"></i> Members
+            </a>
+          </li>
+          <li class="">
+            <a href="#">
+              <i class="fa fa-calendar"></i> Events
+            </a>
+          </li>
+          <li class="">
+            <a href="#">
+              <i class="fa fa-envelope"></i> Messages
+            </a>
+          </li>
+
+
+        </ul>
+      </div>          
+    </div>
+  </div>   
+<div class="container"> 
+
+<div id="content"></div>
+</div>
+</body>
+</html>
+
+<script id="groups-tasks-template" type="text/x-handlebars-template">
+
+<div class="col-md-6 col-sm-6 bootcards-list" id="list" data-title="Notes">	
+	<h3>Tasks</h3>
+
+	<div class="panel panel-default">							
+		<div class="panel-body">
+			<div class="search-form">
+				<div class="row">
+				    <div class="col-xs-9">
+				      <div class="form-group">
+					      <input type="text" class="form-control" placeholder="Search Tasks...">
+					      <i class="fa fa-search"></i>
+				      </div>
+				    </div>
+				    <div class="col-xs-3">
+						<a class="btn btn-primary btn-block" href="/notes/add" data-toggle="modal" data-target="#editModal">
+							<i class="fa fa-plus"></i> 
+							<span>Add</span>
+						</a>
+				    </div>
+				</div>						    
+			</div>							
+		</div>
+					<ul class="nav nav-tabs" role="tablist">
+		        <li role="presentation" class="active"><a href="#group_pannel-members"role="tab" data-toggle="tab">All</a></li>
+		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Active</a></li>
+		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Unassigned</a></li>
+		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Completed</a></li>
+			</ul>
+			<br>
+		<div class="list-group">
+			{{#each tasks}}
+			
+			<a class="list-group-item pjax">
+
+				<i class="fa fa-2x pull-left fa-check-square-o"></i>
+				<h4 class="list-group-item-heading">{{name}}: <small>{{due_date}}</small></h4>
+				<p class="list-group-item-text">{{description}}
+				
+				{{#if assigned_to}}
+				<br><br>
+                <img src="http://graph.facebook.com/{{assigned_to.facebook_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">   
+				<strong>{{assigned_to.first_name}}  {{assigned_to.last_name}}</strong>: {{assigned_to.phone}} {{assigned_to.email}}
+               {{/if}}
+				</p>
+
+
+			</a>
+			{{/each}}
+			
+	
+			
+			
+
+		</div>
+		<div class="panel-footer">
+			
+		</div>					
+	</div>
+</div>
+
+
+<div class="col-sm-6 bootcards-cards hidden-xs" id="listDetails">
+<h3>Activists</h3>
+	<div class="panel panel-default">							
+		<div class="panel-body">
+			<div class="search-form">
+				<div class="row">
+				    <div class="col-xs-9">
+				      <div class="form-group">
+					      <input type="text" class="form-control" placeholder="Search Activists...">
+					      <a href="" class="pull-right">Advanced Search <i class="fa fa-arrow-down"></i></a>
+				      </div>
+				    </div>
+				    <div class="col-xs-3">
+						<a class="btn btn-primary btn-block" href="/notes/add" data-toggle="modal" data-target="#editModal">
+							<i class="fa fa-plus"></i> 
+							<span>Add</span>
+						</a>
+				    </div>
+				</div>						    
+			</div>					
+
+		</div>
+		<div class="list-group">
+			{{#each members}}
+			<div class="list-group-item">
+				<div class="pull-right"><span class="badge">Score {{activist_score}}</span></div>
+				<img src="http://graph.facebook.com/{{facebook_user_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">
+				<h4 class="list-group-item-heading">{{first_name}} {{last_name}}</h4>
+				<p class="list-group-item-text">{{phone}} {{email}}</p>
+				<strong><i class="fa fa-check-circle"></i>Interests:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
+				<strong><i class="fa fa-bullhorn"></i>Skills:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
+				<strong><i class="fa fa-tags"></i>tags:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
+
+			</div>	
+			{{/each}}	
+		
+		
+
+	
+		</div>
+		<div class="panel-footer">
+		</div>					
+	</div>
+
+
+
+
+
+</div>
+
+</script>

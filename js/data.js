@@ -442,7 +442,10 @@ var data={
 	                user_id:1223232,
 	                first_name:"Jose",
 	                last_name:'X',
-	                email:"email@email.com"
+	                email:"email@email.com",
+	                phone:"555-555-5555",
+	                facebook_id:"61731840657"
+
                 },
             	review:{
 					score:2,
@@ -482,13 +485,8 @@ var data={
 		            "office"
 		        ],
 		        due_date:'2017-03-18',
-		        status:"Needs Assignment",
-		        assigned_to:{
-		            user_id:1223232,
-		            first_name:"Jose",
-		            last_name:'X',
-		            email:"email@email.com"
-		        }
+		        status:"Needs Assignment"
+
 		    }		]
     },
     {
