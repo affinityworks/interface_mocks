@@ -114,6 +114,28 @@ var data={
                     event_count:1,
                     date_last_active:"2016-12-23"
                 },
+                skills:[
+                	{
+	                	name:'Trainer'
+                	},
+                	{
+	                	name:'Office'
+                	},
+                	{
+	                	name:'Media'
+                	},
+                	
+                ],
+                interests:[
+                	{
+	                	name:'Make Calls'
+                	},
+                	{
+	                	name:'Event Help'
+                	}
+
+                ],
+
                 notes:[
                     {
                         id:"23434",
@@ -391,7 +413,9 @@ var data={
 					events:1,
 					messages:2,
 					tasks:8,
-					tasks_completed:3	
+					tasks_completed:3,	
+					tasks_overdue:1	
+
 				},
 				campaign:{
 					name:'Gneral Strike',

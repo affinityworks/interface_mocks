@@ -124,6 +124,8 @@ $(document).ready(function(){
 		        <li role="presentation" class="active"><a href="#group_pannel-members"role="tab" data-toggle="tab">All</a></li>
 		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Active</a></li>
 		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Unassigned</a></li>
+
+		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Overdue</a></li>
 		        <li role="presentation" class=""><a href="#group_pannel-members"role="tab" data-toggle="tab">Completed</a></li>
 			</ul>
 			<br>
@@ -138,7 +140,9 @@ $(document).ready(function(){
 				
 				{{#if assigned_to}}
 				<br><br>
-                <img src="http://graph.facebook.com/{{assigned_to.facebook_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">   
+				{{#if assigned_to.facebook_id}}
+                <img src="http://graph.facebook.com/{{assigned_to.facebook_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">
+                {{/if}}   
 				<strong>{{assigned_to.first_name}}  {{assigned_to.last_name}}</strong>: {{assigned_to.phone}} {{assigned_to.email}}
                {{/if}}
 				</p>
@@ -165,10 +169,59 @@ $(document).ready(function(){
 		<div class="panel-body">
 			<div class="search-form">
 				<div class="row">
-				    <div class="col-xs-9">
+				    <div class="col-xs-8">
 				      <div class="form-group">
 					      <input type="text" class="form-control" placeholder="Search Activists...">
+				      </div>
+				    </div>
+				    <div class="col-xs-4">
 					      <a href="" class="pull-right">Advanced Search <i class="fa fa-arrow-down"></i></a>
+
+				    </div>
+				</div>						    
+			</div>					
+		</div>
+		<div class="list-group">
+			{{#each members}}
+			<div class="list-group-item">
+				<div class="pull-right">
+
+					<button class="btn btn-primary btn-xs" type="button">Activist Score <span class="badge">{{activist_score}}</span></button><br>
+					<button class="btn btn-info btn-xs" type="button">Active Tasks <span class="badge">{{activist_score}}</span></button><br>
+					<button class="btn btn-warning btn-xs" type="button">Overdue Tasks <span class="badge">{{activist_score}}</span></button><br>
+
+
+
+					
+					
+					
+				</div>
+				<img src="http://graph.facebook.com/{{facebook_user_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">
+				<h4 class="list-group-item-heading">{{first_name}} {{last_name}}</h4>
+				<p class="list-group-item-text">{{phone}} {{email}}</p>
+				{{#if interests}}
+				<strong><i class="fa fa-check-circle"></i>Interests:</strong> {{#each interests}}{{name}}, {{/each}}<br>
+				{{/if}}
+				{{#if skills}}
+				<strong><i class="fa fa-bullhorn"></i>Skills:</strong> {{#each skills}}{{name}}, {{/each}}<br>
+				{{/if}}
+				{{#if tags}}
+				<strong><i class="fa fa-tags"></i>tags:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
+				{{/if}}
+			</div>	
+			{{/each}}	
+
+		</div>				
+	</div>
+
+<h3>Projects</h3>
+	<div class="panel panel-default">							
+		<div class="panel-body">
+			<div class="search-form">
+				<div class="row">
+				    <div class="col-xs-9">
+				      <div class="form-group">
+					      <input type="text" class="form-control" placeholder="Search Projects...">
 				      </div>
 				    </div>
 				    <div class="col-xs-3">
@@ -179,32 +232,28 @@ $(document).ready(function(){
 				    </div>
 				</div>						    
 			</div>					
-
 		</div>
 		<div class="list-group">
-			{{#each members}}
+			{{#each projects}}
 			<div class="list-group-item">
-				<div class="pull-right"><span class="badge">Score {{activist_score}}</span></div>
-				<img src="http://graph.facebook.com/{{facebook_user_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">
-				<h4 class="list-group-item-heading">{{first_name}} {{last_name}}</h4>
-				<p class="list-group-item-text">{{phone}} {{email}}</p>
-				<strong><i class="fa fa-check-circle"></i>Interests:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
-				<strong><i class="fa fa-bullhorn"></i>Skills:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
-				<strong><i class="fa fa-tags"></i>tags:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
+				<h4 class="list-group-item-heading">{{name}}</h4>
+				<p class="list-group-item-text">
+					<i class="fa fa-check"></i>
+					<strong>Tasks:</strong> {{stats.tasks}}
+					<strong>Completed:</strong> {{stats.tasks_completed}}
+					<strong>Overdue:</strong> {{stats.tasks_overdue}} <br>
+					
+					<i class="fa fa-calendar"></i>
+					<strong>Events:</strong> {{stats.events}}<br>
 
+					<i class="fa fa-envelope"></i>
+					<strong>Messages:</strong> {{stats.events}}<br>
+				</p>
 			</div>	
 			{{/each}}	
-		
-		
-
-	
 		</div>
-		<div class="panel-footer">
-		</div>					
+				
 	</div>
-
-
-
 
 
 </div>
