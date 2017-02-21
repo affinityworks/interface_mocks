@@ -60,8 +60,10 @@ a.list-group-item:before {
 }
 
 .list-group-item img {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
+    margin-bottom: 8px;
+    margin-right: 6px;
 }
 
 
@@ -70,6 +72,7 @@ a.list-group-item:before {
     height: 30px;
     width: 30px;
     margin-bottom: 8px;
+    margin-right: 6px;
 }
 
 
@@ -194,6 +197,7 @@ a.list-group-item:before {
 				
 				{{#if assigned_to}}
 				<br>
+		
 				{{#each assigned_to}}
 				<div class="row">
 
@@ -201,7 +205,7 @@ a.list-group-item:before {
 				{{#if facebook_id}}
                 <img src="http://graph.facebook.com/{{facebook_id}}/picture?type=square&height=100&width=100" class="img-rounded pull-left img-smaller">
                 {{/if}}   
-				<strong>{{first_name}}  {{last_name}}</strong>: {{phone}} {{email}}
+				<strong>{{first_name}}  {{last_name}}</strong>
                
 				</div>
                
@@ -273,7 +277,8 @@ a.list-group-item:before {
 				<img src="http://graph.facebook.com/{{facebook_user_id}}/picture?type=square&height=100&width=100" class="img-rounded pull-left">
 				<h4 class="list-group-item-heading">{{first_name}} {{last_name}}</h4>
 				<p class="list-group-item-text">{{phone}} {{email}}</p>
-				
+				<br>
+				<br>
 				<br>
 				{{#if interests}}
 				<strong><!--<i class="fa fa-check-circle"></i>-->Interests:</strong> {{#each interests}}{{name}}, {{/each}}<br>
