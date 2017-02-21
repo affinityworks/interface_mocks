@@ -28,6 +28,57 @@ $(document).ready(function(){
 
 });
 </script>
+
+<style>
+	
+	.bootcards-list .search-form i.fa-search, .bootcards-list form i.fa-search {
+     position: relative;
+    left: 0px;
+    top: 0px;
+    color: #fff; 
+    font-size: 14px;
+}
+
+a.list-group-item:before {
+    font-family: FontAwesome;
+    content: '';
+}
+
+.panel>.list-group .list-group-item {
+    padding: 25px;
+}
+
+
+.btn-xs {
+    width: 120px;
+    margin-bottom: 8px;
+}
+
+
+.bootcards-list .search-form input, .bootcards-list form input {
+    padding-left: 12px; 
+}
+
+.list-group-item img {
+    height: 60px;
+    width: 60px;
+}
+
+
+
+.list-group-item img.img-smaller  {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 8px;
+}
+
+
+
+
+	
+</style>
+
+
 </head>
 
 <body>
@@ -108,13 +159,13 @@ $(document).ready(function(){
 				    <div class="col-xs-9">
 				      <div class="form-group">
 					      <input type="text" class="form-control" placeholder="Search Tasks...">
-					      <i class="fa fa-search"></i>
+					      
 				      </div>
 				    </div>
 				    <div class="col-xs-3">
 						<a class="btn btn-primary btn-block" href="/notes/add" data-toggle="modal" data-target="#editModal">
-							<i class="fa fa-plus"></i> 
-							<span>Add</span>
+							<i class="fa fa-search"></i> 
+							<span>Search</span>
 						</a>
 				    </div>
 				</div>						    
@@ -132,23 +183,35 @@ $(document).ready(function(){
 		<div class="list-group">
 			{{#each tasks}}
 			
-			<a class="list-group-item pjax">
-
-				<i class="fa fa-2x pull-left fa-check-square-o"></i>
-				<h4 class="list-group-item-heading">{{name}}: <small>{{due_date}}</small></h4>
-				<p class="list-group-item-text">{{description}}
+			<div class="list-group-item ">
+				<div class="pull-right">
+					<strong>Due: {{due_date}}</strong> 
+					
+					
+				</div>
+				<h4 class="list-group-item-heading">{{name}}</h4>
+				<p class="list-group-item-text">{{description}}			</p>
 				
 				{{#if assigned_to}}
-				<br><br>
-				{{#if assigned_to.facebook_id}}
-                <img src="http://graph.facebook.com/{{assigned_to.facebook_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">
+				<br>
+				{{#each assigned_to}}
+				<div class="row">
+
+			
+				{{#if facebook_id}}
+                <img src="http://graph.facebook.com/{{facebook_id}}/picture?type=square&height=100&width=100" class="img-rounded pull-left img-smaller">
                 {{/if}}   
-				<strong>{{assigned_to.first_name}}  {{assigned_to.last_name}}</strong>: {{assigned_to.phone}} {{assigned_to.email}}
+				<strong>{{first_name}}  {{last_name}}</strong>: {{phone}} {{email}}
+               
+				</div>
+               
+               {{/each}}
+
                {{/if}}
-				</p>
-
-
-			</a>
+               
+               
+	
+			</div>
 			{{/each}}
 			
 	
@@ -157,6 +220,12 @@ $(document).ready(function(){
 
 		</div>
 		<div class="panel-footer">
+			<a class="btn btn-primary pull-right" href="/notes/add" data-toggle="modal" data-target="#editModal">
+				<i class="fa fa-plus"></i> 
+				<span>Add Task</span>
+			</a>
+
+
 			
 		</div>					
 	</div>
@@ -175,7 +244,12 @@ $(document).ready(function(){
 				      </div>
 				    </div>
 				    <div class="col-xs-4">
-					      <a href="" class="pull-right">Advanced Search <i class="fa fa-arrow-down"></i></a>
+					    <a class="btn btn-primary btn-block" href="/notes/add" data-toggle="modal" data-target="#editModal">
+							<i class="fa fa-search"></i> 
+							<span>Search</span>
+						</a>
+					    
+					     <br> <a href="" class="pull-right">Advanced Search <i class="fa fa-arrow-down"></i></a>
 
 				    </div>
 				</div>						    
@@ -196,24 +270,26 @@ $(document).ready(function(){
 					
 					
 				</div>
-				<img src="http://graph.facebook.com/{{facebook_user_id}}/picture?type=square&height=25&width=25" class="img-rounded pull-left">
+				<img src="http://graph.facebook.com/{{facebook_user_id}}/picture?type=square&height=100&width=100" class="img-rounded pull-left">
 				<h4 class="list-group-item-heading">{{first_name}} {{last_name}}</h4>
 				<p class="list-group-item-text">{{phone}} {{email}}</p>
+				
+				<br>
 				{{#if interests}}
-				<strong><i class="fa fa-check-circle"></i>Interests:</strong> {{#each interests}}{{name}}, {{/each}}<br>
+				<strong><!--<i class="fa fa-check-circle"></i>-->Interests:</strong> {{#each interests}}{{name}}, {{/each}}<br>
 				{{/if}}
 				{{#if skills}}
-				<strong><i class="fa fa-bullhorn"></i>Skills:</strong> {{#each skills}}{{name}}, {{/each}}<br>
+				<strong><!--<i class="fa fa-bullhorn"></i>-->Skills:</strong> {{#each skills}}{{name}}, {{/each}}<br>
 				{{/if}}
 				{{#if tags}}
-				<strong><i class="fa fa-tags"></i>tags:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
+				<strong><!--<i class="fa fa-tags"></i>-->Tags:</strong> {{#each tags}}{{tag}}, {{/each}}<br>
 				{{/if}}
 			</div>	
 			{{/each}}	
 
 		</div>				
 	</div>
-
+<!--
 <h3>Projects</h3>
 	<div class="panel panel-default">							
 		<div class="panel-body">
@@ -254,7 +330,7 @@ $(document).ready(function(){
 		</div>
 				
 	</div>
-
+-->
 
 </div>
 
