@@ -6787,5 +6787,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   height: 700px;
+  width: 30%!important;
+  margin: 0 2px;
 }
 /*# sourceMappingURL=commons_campaign_1.css.map */
