@@ -114,6 +114,28 @@ var data={
                     event_count:1,
                     date_last_active:"2016-12-23"
                 },
+                skills:[
+                	{
+	                	name:'Trainer'
+                	},
+                	{
+	                	name:'Office'
+                	},
+                	{
+	                	name:'Media'
+                	},
+                	
+                ],
+                interests:[
+                	{
+	                	name:'Make Calls'
+                	},
+                	{
+	                	name:'Event Help'
+                	}
+
+                ],
+
                 notes:[
                     {
                         id:"23434",
@@ -391,7 +413,9 @@ var data={
 					events:1,
 					messages:2,
 					tasks:8,
-					tasks_completed:3	
+					tasks_completed:3,	
+					tasks_overdue:1	
+
 				},
 				campaign:{
 					name:'Gneral Strike',
@@ -424,7 +448,7 @@ var data={
 		        description:"Make reminder calls to all users that have RSVPed, make sure to not call after 8 pm",
 		        start_time:'',
 		        end_time:'',
-		        due_date:'2017-03-03',
+		        due_date:'March 3rd',
 		        assigned_date:'2017-03-01',
 		        completed_date:'',
 		        status:"Assigned",
@@ -438,12 +462,26 @@ var data={
 					id:3343,
 					name:"General Strike"
 				},
-				assigned_to:{
-	                user_id:1223232,
-	                first_name:"Jose",
-	                last_name:'X',
-	                email:"email@email.com"
-                },
+				assigned_to:[
+					{
+		                user_id:1223232,
+		                first_name:"Jose",
+		                last_name:'X',
+		                email:"email@email.com",
+		                phone:"555-555-5555",
+		                facebook_id:"61731840657"
+	
+	                },
+					{
+		                user_id:1223232,
+		                first_name:"David",
+		                last_name:'Taylor',
+		                email:"email@email.com",
+		                phone:"555-555-5555",
+		                facebook_id:"511719841"
+	
+	                }
+	            ],
             	review:{
 					score:2,
 					notes:'They did a good job',
@@ -458,7 +496,7 @@ var data={
 		            "admin",
 		            "office"
 		        ],
-		        due_date:'2017-03-18',
+		        due_date:'March 18th',
 		        status:"Needs Assignment",
 		        event:{
 			        id:2323,
@@ -466,12 +504,16 @@ var data={
 			        date:'2017-04-10',
 			        url:''
 		        },
-		        assigned_to:{
-		            user_id:1223232,
-		            first_name:"Jose",
-		            last_name:'X',
-		            email:"email@email.com"
-		        }
+		        assigned_to:[					{
+		                user_id:1223232,
+		                first_name:"Jose",
+		                last_name:'X',
+		                email:"email@email.com",
+		                phone:"555-555-5555",
+		                facebook_id:"61731840657"
+	
+	                }
+		        ]
 		    },  
 		    {
 		        task_id:1233,
@@ -481,14 +523,9 @@ var data={
 		            "admin",
 		            "office"
 		        ],
-		        due_date:'2017-03-18',
-		        status:"Needs Assignment",
-		        assigned_to:{
-		            user_id:1223232,
-		            first_name:"Jose",
-		            last_name:'X',
-		            email:"email@email.com"
-		        }
+		        due_date:'March 12th',
+		        status:"Needs Assignment"
+
 		    }		]
     },
     {
