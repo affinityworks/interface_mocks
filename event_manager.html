@@ -42,7 +42,7 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li><a href=""><i class="fa fa-user"></i> Account</a></li>
-            <li><a href=""<i class="fa fa-sign-out"></i> Logout</a></li>
+            <li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
           </ul>
         </div>
       </div>
@@ -63,6 +63,15 @@
 
         <div role="tabpanel" class="tab-pane active" id="group_pannel-events">
         <h3><i class="fa fa-calendar"></i> Group Events</h3>
+        <div id="event_filter_controls">
+          Filter events by:
+          <select>
+            <option>Upcoming</option>
+            <option>Past</option>
+            <option>Date range</option>
+          </select>
+
+        </div>
 
         <table class="table table-striped">
           <thead>
