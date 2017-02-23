@@ -75,18 +75,15 @@
           <table class="table table-striped">
             <thead>
               <tr>
-
                 <th>Name</th>
                 <th>Organizer</th>
                 <th>Date</th>
                 <th>Status</th>
                 <th>Tentative</th>
                 <th>Attending</th>
-                <th>Atended</th>
+                <th>Attended</th>
                 <th></th>
                 <th></th>
-
-
               </tr>
             </thead>
             <tbody>
@@ -144,22 +141,22 @@
 
 
             <br><h3>Event Participants</h3>
-            
-            
-                      <div id="event_filter_controls">
-            Filter particpants by:
-            <select>
-              <option>Tentative</option>
-              <option>Accepted</option>
-              <option>Declined</option>
-              <option>Cancelled</option>
-              <option>Needs Action</option>
-              <option>Attended</option>
-              <option>Not Attended</option>
-            </select>
-          </div>
+
+
+            <div id="event_filter_controls">
+              Filter particpants by:
+              <select>
+                <option>Tentative</option>
+                <option>Accepted</option>
+                <option>Declined</option>
+                <option>Cancelled</option>
+                <option>Needs Action</option>
+                <option>Attended</option>
+                <option>Not Attended</option>
+              </select>
+            </div>
             <br>
-            
+
             <a href="" class="pull-right"><i class="fa fa-download"></i> Download Attendees</a>
             <a href="" class="pull-right"><i class="fa fa-upload"></i> Upload Attendees&nbsp;&nbsp;</a>
             <label>mark selected as:</label>
@@ -191,7 +188,7 @@
               <tbody>
                 {{#with groups.0.events.[0]}}
 
-                
+
                 {{#each users.attending}}
                 <tr>
                   <td><input type="checkbox"></td>
@@ -201,9 +198,9 @@
                   <td>Attending</td>
                   <td></td>
                 </tr>
-                {{/each}}                
-                
-                
+                {{/each}}
+
+
                 {{#each users.tenative}}
                 <tr>
                   <td><input type="checkbox"></td>
